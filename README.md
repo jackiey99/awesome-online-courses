@@ -29,3 +29,4 @@ An index of online courses with recorded videos for learning various topics, inc
 | Name | Instructor | Institute | Video |
 | --- | --- | --- | --- |
 |Mathematics 4: Real Analysis|Ole Christensen|DTU|[Youtube](https://www.youtube.com/watch?v=VXwXkME9uWU&list=PLaLOVNqqD-2FgXrlAPLv-iJRH-SriVqoq)|
+|[Mathematical Methods for Robotics, Vision, and Graphics](https://graphics.stanford.edu/courses/cs205a-13-fall/index.html)|Justin Solomon|Stanford|[Youtube](https://www.youtube.com/watch?v=dkT8yuI2d50)|
