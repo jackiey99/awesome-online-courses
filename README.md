@@ -21,7 +21,7 @@ An index of online courses with recorded videos for learning various topics, inc
 ## Data Structure and Algorithm
 
 | Name | Instructor | Institute | Video |
-| --- | --- | --- | --- | 
+| --- | --- | --- | --- |
 |[CS 61B Data Structures](https://sp19.datastructur.es/)|Josh Hug|Berkeley|[Youtube](https://www.youtube.com/playlist?list=PL8FaHk7qbOD58T7Zjfeq4m6K_D7eDg4TH)|
 
 ## Mathematics
@@ -30,3 +30,8 @@ An index of online courses with recorded videos for learning various topics, inc
 | --- | --- | --- | --- |
 |Mathematics 4: Real Analysis|Ole Christensen|DTU|[Youtube](https://www.youtube.com/watch?v=VXwXkME9uWU&list=PLaLOVNqqD-2FgXrlAPLv-iJRH-SriVqoq)|
 |[Mathematical Methods for Robotics, Vision, and Graphics](https://graphics.stanford.edu/courses/cs205a-13-fall/index.html)|Justin Solomon|Stanford|[Youtube](https://www.youtube.com/watch?v=dkT8yuI2d50)|
+
+## Productivity
+| Name | Instructor | Institute | Video |
+| --- | --- | --- | --- |
+|[The missing semester](https://missing.csail.mit.edu/)|varies|MIT|[Youtube](https://www.youtube.com/playlist?list=PLyzOVJj3bHQuloKGG59rS43e29ro7I57J)|
