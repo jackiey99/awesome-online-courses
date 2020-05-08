@@ -12,6 +12,7 @@ An index of online courses with recorded videos for learning various topics, inc
 
 | Name | Instructor | Institute | Video |
 | --- | --- | --- | --- |
+| [11-785 Introduction to Deep Learning](http://deeplearning.cs.cmu.edu/)|Bhiksha Raj|CMU|[Youtube](https://www.youtube.com/watch?v=VO5vKowfMOQ)|
 |[CS4780/CS5780: Machine Learning for Intelligent Systems](https://www.cs.cornell.edu/courses/cs4780/2018fa/)|Kilian Weinberger|Cornell|[Youtube](https://www.youtube.com/playlist?list=PLl8OlHZGYOQ7bkVbuRthEsaLr7bONzbXS)|
 |[Machine Learning, 2020](http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html)|Hung-yi Lee|NTU|[Youtube](https://www.youtube.com/watch?v=CXgbekl66jc&list=PLJV_el3uVTsPy9oCRY30oBPNLCo89yu49)|
 |[Reinforcement Learning](https://www.davidsilver.uk/teaching/)|David Silver|UCL|[Youtube](https://www.youtube.com/watch?v=2pWv7GOvuf0)|
