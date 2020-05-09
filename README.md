@@ -7,6 +7,7 @@ An index of online courses with recorded videos for learning various topics, inc
 - [Machine Learning](#machine-learning)
 - [Data Structure and Algorithm](#data-structure-and-algorithm)
 - [Mathematics](#mathematics)
+- [Productivity](#productivity)
 
 ## Machine Learning
 
@@ -31,8 +32,12 @@ An index of online courses with recorded videos for learning various topics, inc
 | --- | --- | --- | --- |
 |Mathematics 4: Real Analysis|Ole Christensen|DTU|[Youtube](https://www.youtube.com/watch?v=VXwXkME9uWU&list=PLaLOVNqqD-2FgXrlAPLv-iJRH-SriVqoq)|
 |[Mathematical Methods for Robotics, Vision, and Graphics](https://graphics.stanford.edu/courses/cs205a-13-fall/index.html)|Justin Solomon|Stanford|[Youtube](https://www.youtube.com/watch?v=dkT8yuI2d50)|
+|[MIT 18.065 Matrix Methods in Data Analysis, Signal Processing, and Machine Learning](https://ocw.mit.edu/courses/mathematics/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/)|Gilbert Strang|MIT|[Youtube](https://www.youtube.com/playlist?list=PLUl4u3cNGP63oMNUHXqIUcrkS2PivhN3k)|
+|[MIT 18.06 Linear Algebra](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/)|Gilbert Strang|MIT|[Youtube](https://www.youtube.com/watch?v=ZK3O402wf1c&list=PL49CF3715CB9EF31D&index=1)|
+|[Convex Optimization](http://www.stat.cmu.edu/~ryantibs/convexopt/)|Ryan Tibshirani|CMU|[Youtube](https://www.youtube.com/watch?v=Di9f47LAzHQ&list=PLRPU00LaonXQ27RBcq6jFJnyIbGw5azOI&index=1)|
 
 ## Productivity
+
 | Name | Instructor | Institute | Video |
 | --- | --- | --- | --- |
 |[The missing semester](https://missing.csail.mit.edu/)|varies|MIT|[Youtube](https://www.youtube.com/playlist?list=PLyzOVJj3bHQuloKGG59rS43e29ro7I57J)|
