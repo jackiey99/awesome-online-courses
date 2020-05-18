@@ -19,6 +19,7 @@ An index of online courses with recorded videos for learning various topics, inc
 |[Reinforcement Learning](https://www.davidsilver.uk/teaching/)|David Silver|UCL|[Youtube](https://www.youtube.com/watch?v=2pWv7GOvuf0)|
 |[CS224n: Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/)|Chris Manning|Stanford|[Youtube](https://www.youtube.com/playlist?list=PLoROMvodv4rOhcuXMZkNm7j3fVwBBY42z)|
 |[CS294-158-SP20 Deep Unsupervised Learning](https://sites.google.com/view/berkeley-cs294-158-sp20/home)|Pieter Abbeel|Berkeley|[Youtube](https://youtu.be/V9Roouqfu-M)|
+|[Probabilistic Graphical Models](https://sailinglab.github.io/pgm-spring-2019/)|Eric Xing|CMU|[Youtube](https://www.youtube.com/watch?v=Spj2OSYmtGg&list=PLoZgVqqHOumTY2CAQHL45tQp6kmDnDcqn&index=1)|
 
 ## Data Structure and Algorithm
 
