@@ -6,6 +6,7 @@ An index of online courses with recorded videos for learning various topics, inc
 
 - [Machine Learning](#machine-learning)
 - [Data Structure and Algorithm](#data-structure-and-algorithm)
+- [System](#system)
 - [Mathematics](#mathematics)
 - [Productivity](#productivity)
 
@@ -26,6 +27,12 @@ An index of online courses with recorded videos for learning various topics, inc
 | Name | Instructor | Institute | Video |
 | --- | --- | --- | --- |
 |[CS 61B Data Structures](https://sp19.datastructur.es/)|Josh Hug|Berkeley|[Youtube](https://www.youtube.com/playlist?list=PL8FaHk7qbOD58T7Zjfeq4m6K_D7eDg4TH)|
+
+## System
+
+| Name | Instructor | Institute | Video |
+| --- | --- | --- | --- |
+| [MIT 6.824: Distributed Systems](https://pdos.csail.mit.edu/6.824/) | Robert Morris | MIT | [Youtube](https://www.youtube.com/watch?v=cQP8WApzIQQ&list=PLrw6a1wE39_tb2fErI4-WkMbsvGQk9_UB)|
 
 ## Mathematics
 
