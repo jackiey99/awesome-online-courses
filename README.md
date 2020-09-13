@@ -43,6 +43,7 @@ An index of online courses with recorded videos for learning various topics, inc
 |[MIT 18.065 Matrix Methods in Data Analysis, Signal Processing, and Machine Learning](https://ocw.mit.edu/courses/mathematics/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/)|Gilbert Strang|MIT|[Youtube](https://www.youtube.com/playlist?list=PLUl4u3cNGP63oMNUHXqIUcrkS2PivhN3k)|
 |[MIT 18.06 Linear Algebra](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/)|Gilbert Strang|MIT|[Youtube](https://www.youtube.com/watch?v=ZK3O402wf1c&list=PL49CF3715CB9EF31D&index=1)|
 |[Convex Optimization](http://www.stat.cmu.edu/~ryantibs/convexopt/)|Ryan Tibshirani|CMU|[Youtube](https://www.youtube.com/watch?v=Di9f47LAzHQ&list=PLRPU00LaonXQ27RBcq6jFJnyIbGw5azOI&index=1)|
+|[MIT 6.262 Discrete Stochastic Process](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-262-discrete-stochastic-processes-spring-2011/)|Robert Gallager|MIT|[Youtube](https://www.youtube.com/watch?v=7CYXy9J4Aao&list=PLEEF5322B331C1B98)|
 
 ## Productivity
 
