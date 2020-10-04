@@ -5,6 +5,7 @@ An index of online courses with recorded videos for learning various topics, inc
 # Table of Contents
 
 - [Machine Learning](#machine-learning)
+- [Deep Learning](#deep-learning)
 - [Data Structure and Algorithm](#data-structure-and-algorithm)
 - [System](#system)
 - [Mathematics](#mathematics)
@@ -14,13 +15,21 @@ An index of online courses with recorded videos for learning various topics, inc
 
 | Name | Instructor | Institute | Video |
 | --- | --- | --- | --- |
-| [11-785 Introduction to Deep Learning](http://deeplearning.cs.cmu.edu/)|Bhiksha Raj|CMU|[Youtube](https://www.youtube.com/watch?v=VO5vKowfMOQ)|
 |[CS4780/CS5780: Machine Learning for Intelligent Systems](https://www.cs.cornell.edu/courses/cs4780/2018fa/)|Kilian Weinberger|Cornell|[Youtube](https://www.youtube.com/playlist?list=PLl8OlHZGYOQ7bkVbuRthEsaLr7bONzbXS)|
 |[Machine Learning, 2020](http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html)|Hung-yi Lee|NTU|[Youtube](https://www.youtube.com/watch?v=CXgbekl66jc&list=PLJV_el3uVTsPy9oCRY30oBPNLCo89yu49)|
 |[Reinforcement Learning](https://www.davidsilver.uk/teaching/)|David Silver|UCL|[Youtube](https://www.youtube.com/watch?v=2pWv7GOvuf0)|
+|[Probabilistic Graphical Models](https://sailinglab.github.io/pgm-spring-2019/)|Eric Xing|CMU|[Youtube](https://www.youtube.com/watch?v=Spj2OSYmtGg&list=PLoZgVqqHOumTY2CAQHL45tQp6kmDnDcqn&index=1)|
+
+
+## Deep Learning
+| Name | Instructor | Institute | Video |
+| --- | --- | --- | --- |
+| [Practical Deep Learning for Coders](https://course.fast.ai/)|Jeremy Howard|fast.ai|[Videos](https://course.fast.ai/videos/?lesson=1)|
+| [11-785 Introduction to Deep Learning](http://deeplearning.cs.cmu.edu/)|Bhiksha Raj|CMU|[Youtube](https://www.youtube.com/watch?v=VO5vKowfMOQ)|
 |[CS224n: Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/)|Chris Manning|Stanford|[Youtube](https://www.youtube.com/playlist?list=PLoROMvodv4rOhcuXMZkNm7j3fVwBBY42z)|
 |[CS294-158-SP20 Deep Unsupervised Learning](https://sites.google.com/view/berkeley-cs294-158-sp20/home)|Pieter Abbeel|Berkeley|[Youtube](https://youtu.be/V9Roouqfu-M)|
-|[Probabilistic Graphical Models](https://sailinglab.github.io/pgm-spring-2019/)|Eric Xing|CMU|[Youtube](https://www.youtube.com/watch?v=Spj2OSYmtGg&list=PLoZgVqqHOumTY2CAQHL45tQp6kmDnDcqn&index=1)|
+
+
 
 ## Data Structure and Algorithm
 
