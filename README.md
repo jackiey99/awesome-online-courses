@@ -19,7 +19,7 @@ An index of online courses with recorded videos for learning various topics, inc
 |[Machine Learning, 2020](http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html)|Hung-yi Lee|NTU|[Youtube](https://www.youtube.com/watch?v=CXgbekl66jc&list=PLJV_el3uVTsPy9oCRY30oBPNLCo89yu49)|
 |[Reinforcement Learning](https://www.davidsilver.uk/teaching/)|David Silver|UCL|[Youtube](https://www.youtube.com/watch?v=2pWv7GOvuf0)|
 |[Probabilistic Graphical Models](https://sailinglab.github.io/pgm-spring-2019/)|Eric Xing|CMU|[Youtube](https://www.youtube.com/watch?v=Spj2OSYmtGg&list=PLoZgVqqHOumTY2CAQHL45tQp6kmDnDcqn&index=1)|
-
+|Information Theory, Pattern Recognition, and Neural Networks|David Mackay|University of Cambridge|[videolectures](http://videolectures.net/course_information_theory_pattern_recognition/)|
 
 ## Deep Learning
 | Name | Instructor | Institute | Video |
