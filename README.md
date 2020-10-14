@@ -24,6 +24,7 @@ An index of online courses with recorded videos for learning various topics, inc
 ## Deep Learning
 | Name | Instructor | Institute | Video |
 | --- | --- | --- | --- |
+| [DS-GA 1008 Deep Learning](https://atcold.github.io/pytorch-Deep-Learning/)| Yann LeCun | NYU |[Youtube](https://www.youtube.com/watch?v=0bMe_vCZo30)|
 | [Practical Deep Learning for Coders](https://course.fast.ai/)|Jeremy Howard|fast.ai|[Videos](https://course.fast.ai/videos/?lesson=1)|
 | [11-785 Introduction to Deep Learning](http://deeplearning.cs.cmu.edu/)|Bhiksha Raj|CMU|[Youtube](https://www.youtube.com/watch?v=VO5vKowfMOQ)|
 |[CS224n: Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/)|Chris Manning|Stanford|[Youtube](https://www.youtube.com/playlist?list=PLoROMvodv4rOhcuXMZkNm7j3fVwBBY42z)|
