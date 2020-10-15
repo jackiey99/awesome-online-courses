@@ -29,7 +29,7 @@ An index of online courses with recorded videos for learning various topics, inc
 | [11-785 Introduction to Deep Learning](http://deeplearning.cs.cmu.edu/)|Bhiksha Raj|CMU|[Youtube](https://www.youtube.com/watch?v=VO5vKowfMOQ)|
 |[CS224n: Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/)|Chris Manning|Stanford|[Youtube](https://www.youtube.com/playlist?list=PLoROMvodv4rOhcuXMZkNm7j3fVwBBY42z)|
 |[CS294-158-SP20 Deep Unsupervised Learning](https://sites.google.com/view/berkeley-cs294-158-sp20/home)|Pieter Abbeel|Berkeley|[Youtube](https://youtu.be/V9Roouqfu-M)|
-
+|[ESE 680 Graph Neural Networks](https://gnn.seas.upenn.edu/)|Alejandro Ribeiro|U Penn|[Youtube](https://www.youtube.com/playlist?list=PL-BLJBpGQyLOBRhqEry2rsibv14hH5A2u) |
 
 
 ## Data Structure and Algorithm
