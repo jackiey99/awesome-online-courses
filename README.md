@@ -35,8 +35,7 @@ An index of online courses with recorded videos for learning various topics, inc
 ## NLP
 | Name | Instructor | Institute | Video |
 | --- | --- | --- | --- |
-|[CS224N: Natural Language Processing with Deep Learning](https://web.stanford.edu/class/cs224n/)|Christopher Manning|
-|Stanford|[Youtube](https://www.youtube.com/playlist?list=PLoROMvodv4rMFqRtEuo6SGjY4XbRIVRd4)|
+|[CS224N: Natural Language Processing with Deep Learning](https://web.stanford.edu/class/cs224n/)|Christopher Manning|Stanford|[Youtube](https://www.youtube.com/playlist?list=PLoROMvodv4rMFqRtEuo6SGjY4XbRIVRd4)|
 
 
 ## Data Structure and Algorithm
