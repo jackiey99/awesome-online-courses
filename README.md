@@ -32,6 +32,13 @@ An index of online courses with recorded videos for learning various topics, inc
 |[ESE 680 Graph Neural Networks](https://gnn.seas.upenn.edu/)|Alejandro Ribeiro|U Penn|[Youtube](https://www.youtube.com/playlist?list=PL-BLJBpGQyLOBRhqEry2rsibv14hH5A2u) |
 
 
+## NLP
+| Name | Instructor | Institute | Video |
+| --- | --- | --- | --- |
+|[CS224N: Natural Language Processing with Deep Learning](https://web.stanford.edu/class/cs224n/)|Christopher Manning
+|Stanford|[Youtube](https://www.youtube.com/playlist?list=PLoROMvodv4rMFqRtEuo6SGjY4XbRIVRd4)|
+
+
 ## Data Structure and Algorithm
 
 | Name | Instructor | Institute | Video |
