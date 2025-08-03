@@ -35,6 +35,7 @@ An index of online courses with recorded videos for learning various topics, inc
 ## NLP
 | Name | Instructor | Institute | Video |
 | --- | --- | --- | --- |
+|[Reinforcement Learning of Large Language Models, Spring 2025](https://ernestryu.com/courses/RL-LLM.html) | Ernest K. Ryu | UCLA | [Youtube](https://www.youtube.com/watch?v=q9972BRoXzQ)|
 |[CS224N: Natural Language Processing with Deep Learning](https://web.stanford.edu/class/cs224n/)|Christopher Manning|Stanford|[Youtube](https://www.youtube.com/playlist?list=PLoROMvodv4rMFqRtEuo6SGjY4XbRIVRd4)|
 
 
