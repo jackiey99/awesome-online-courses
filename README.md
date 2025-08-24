@@ -24,6 +24,7 @@ An index of online courses with recorded videos for learning various topics, inc
 ## Deep Learning
 | Name | Instructor | Institute | Video |
 | --- | --- | --- | --- |
+| [CS 285 Deep Reinforcement Learning](https://rail.eecs.berkeley.edu/deeprlcourse/)| Sergey Levine | UC Berkeley |[Youtube](https://www.youtube.com/watch?v=SupFHGbytvA&list=PL_iWQOsE6TfVYGEGiAOMaOzzv41Jfm_Ps&index=2)|
 | [DS-GA 1008 Deep Learning](https://atcold.github.io/pytorch-Deep-Learning/)| Yann LeCun | NYU |[Youtube](https://www.youtube.com/watch?v=0bMe_vCZo30)|
 | [Practical Deep Learning for Coders](https://course.fast.ai/)|Jeremy Howard|fast.ai|[Videos](https://course.fast.ai/videos/?lesson=1)|
 | [11-785 Introduction to Deep Learning](http://deeplearning.cs.cmu.edu/)|Bhiksha Raj|CMU|[Youtube](https://www.youtube.com/watch?v=VO5vKowfMOQ)|
