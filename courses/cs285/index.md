@@ -23,7 +23,7 @@
 
 | # | 标题 | 中文 | English |
 | --- | --- | --- | --- |
-| 1 | 导论：什么是深度强化学习 | [📝](/courses/cs285/lecture-01) | [📝](/courses/cs285/lecture-01.en) |
+| 1 | 导论：什么是深度强化学习 | [📝](/courses/cs285/lecture-01) | [📝](/en/courses/cs285/lecture-01) |
 | 2 | Imitation Learning | 🚧 | 🚧 |
 | 3 | Introduction to RL | 🚧 | 🚧 |
 | ... | ... | ... | ... |

@@ -38,6 +38,9 @@ Sergey opens with a concrete, visceral problem: **how do you get a robotic arm t
 
 Input: monocular RGB camera image. Output: a set of $(x, y, z)$ grasp coordinates + gripper actuation.
 
+![CS285 Lecture 1, slide 2](/cs285/lec-1/slide-02.png)
+*Slide 2 · Two approaches to robot grasping. Left: 7-DoF arm + monocular RGB camera setup. Top-right (Option 1): hand-engineer rules per object morphology. Bottom-right (Option 2): cast as supervised learning from `(image, grasp)` pairs. Both routes are problematic.*
+
 Two natural approaches:
 
 - **Option 1: Hand-engineer.** Sit down, analyze: rigid objects grasp at the centroid, irregular ones at the center of mass, deformable ones need a pinch... The special cases explode. Every new object morphology means another if-else branch.
@@ -55,6 +58,9 @@ This is where RL's core idea enters (slides 3-4):
 2. Each attempt has an **outcome label** (success / failure, or more generally a *reward*)
 3. Apply an RL algorithm that **learns from these outcomes** — not by copying the data, but by **maximizing future rewards**
 
+![CS285 Lecture 1, slide 4](/cs285/lec-1/slide-04.png)
+*Slide 4 · The RL paradigm for grasping. Robots collect `(image, action, {success, failure})` data → RL algorithm learns → improved policy → more data. This is a **closed loop**, not the one-way `(x, y) → f(x)` pipeline of supervised learning.*
+
 The pivot in step 3 is crucial: **RL is not copying data.** Supervised learning tries to make $f(x) \approx y$ (imitate the data). RL tries to make the policy **better than the average behavior in the data** — because most attempts in the data were failures, and imitating them would only give you a mediocre robot.
 
 This example anchors the rest of the lecture. **Keep this image in mind: robots flailing around, labels are success/failure.**
@@ -70,6 +76,9 @@ The headline AI breakthroughs of the last few years — text-to-image (diffusion
 - Text-to-image: estimating $p_\theta(\mathbf{x} \mid \text{prompt})$
 - Language models: estimating $p_\theta(\mathbf{x})$, where $\mathbf{x}$ is a token sequence
 - These are massively scaled-up versions of the density estimation you learned in stats class
+
+![CS285 Lecture 1, slide 6](/cs285/lec-1/slide-06.png)
+*Slide 6 · A unified view of modern generative AI: it's all density estimation — $p_\theta(\mathbf{x})$ (bottom-left, unconditional) or $p_\theta(\mathbf{y} \mid \mathbf{x})$ (bottom-right, conditional). LLMs, text-to-image, protein folding — all the same family, just at extreme scale.*
 
 There's a fundamental constraint hidden here: **you learn the distribution of the data.** What's in the data determines what your model can produce.
 
@@ -91,6 +100,9 @@ Keep this contrast handy:
 ## 3. The Two Lineages of Modern RL (slide 7)
 
 Sergey does a short intellectual-history detour that's actually useful for understanding the algorithm taxonomy later.
+
+![CS285 Lecture 1, slide 7](/cs285/lec-1/slide-07.png)
+*Slide 7 · RL's two intellectual lineages. Top-left: B. F. Skinner (behaviorist psychology — gave us the agent-environment-reward framing). Bottom: Karl Sims's 1994 evolved creatures + Yuval Tassa's iLQG control (controls/optimization). Right: their fusion as deep RL — neural networks + agent-environment loop — produces systems like AlphaGo.*
 
 Modern RL emerged from **two distinct disciplines**:
 
@@ -117,6 +129,9 @@ Marry the "reward-driven learning" of Lineage A with the "large-scale optimizati
 ## 4. Emergence vs Imitation: The Philosophical Through-Line (slides 8, 27)
 
 This is **the most important conceptual point** of the lecture. Read slowly:
+
+![CS285 Lecture 1, slide 8](/cs285/lec-1/slide-08.png)
+*Slide 8 · Two distinct kinds of "impressive". Left — AlphaGo's Move 37 is impressive because **no person would have played that move** (emergence). Right — generative AI is impressive because **its outputs look like things a person might have made** (imitation). These two flavors of "impressive" point at fundamentally different research directions.*
 
 > **Generative AI is impressive *because it looks like something a person would make*.**
 > **RL is impressive *because no person would have thought of it*.**
@@ -185,6 +200,9 @@ Two implicit assumptions:
 
 RL satisfies *neither* assumption. It's a **temporal loop**:
 
+![CS285 Lecture 1, slide 15](/cs285/lec-1/slide-15.png)
+*Slide 15 · Supervised learning vs RL, side by side. Left — supervised: given $(\mathbf{x}, \mathbf{y})$ pairs, learn $f_\theta(\mathbf{x}_i) \approx \mathbf{y}_i$. Right — RL: at each step you see $\mathbf{s}_t$, output $\mathbf{a}_t$, learn a policy $\pi_\theta : \mathbf{s}_t \to \mathbf{a}_t$ that maximizes $\sum_t r_t$. The key callout: **"pick your own actions"** — the agent generates its own training distribution.*
+
 ```
 state s_t  →  agent  →  action a_t  →  environment  →  state s_{t+1}, reward r_t
                   ↑                                              ↓
@@ -234,6 +252,9 @@ A few examples worth highlighting:
 
 ### Cathy Wu's Traffic Control (slide 21)
 
+![CS285 Lecture 1, slide 21](/cs285/lec-1/slide-21.png)
+*Slide 21 · Cathy Wu's traffic RL experiments. Left — circular track: realistic human-driver models spontaneously produce stop-and-go waves (small speed perturbations amplify). Right — same effect at a figure-eight intersection. The red car is the RL agent, optimizing the **whole ring's** average speed.*
+
 On a circular track, even simulated human drivers spontaneously form **traffic jams** — small perturbations compound into stop-and-go waves.
 
 Cathy trained **one car** with RL, where the reward was not its own speed but the **average speed of the entire ring**. The RL car learned to **slow itself down**, leaving buffer space behind it, which prevented jams from forming.
@@ -241,6 +262,9 @@ Cathy trained **one car** with RL, where the reward was not its own speed but th
 This is textbook emergence — human drivers don't volunteer to slow down. Only when "global throughput" is the reward does the algorithm discover this counterintuitive strategy.
 
 ### RLHF (slide 24)
+
+![CS285 Lecture 1, slide 24](/cs285/lec-1/slide-24.png)
+*Slide 24 · RLHF pipeline. Sample prompts → initial LM generates multiple replies → humans rank them → train a reward model on `{sample, reward}` pairs → use RL (PPO) to push the LM toward higher reward. This is how human preference gets injected into LLMs.*
 
 The pipeline that made conversational LLMs (ChatGPT, Claude, etc.) actually useful:
 
@@ -267,6 +291,9 @@ The central claim:
 Many readers misinterpret this as "compute + data is all that matters, algorithms don't." **That's wrong.** Sutton says learning AND **search** — not learning AND GPUs, not learning AND big data.
 
 **Search, in Sutton's sense, means optimization / inference**: using computation to *infer* better conclusions, not just to *match* data you've already seen.
+
+![CS285 Lecture 1, slide 30](/cs285/lec-1/slide-30.png)
+*Slide 30 · Sutton's core claim: the two things that scale arbitrarily are **learning** and **search**. Learning (extract patterns from data → understand the world) and Search (use computation to extract inferences → emergent behavior) are **both required**. Deep learning alone won't get you there. Optimization without data only works in simulators.*
 
 | | What it does | What it can't do alone |
 | --- | --- | --- |
@@ -318,6 +345,9 @@ If you accept this, what does a general intelligence need?
 So — **Deep RL is not just "a tool for robotics." It's a candidate framework for building general intelligence.**
 
 Sergey closes with a quote from Alan Turing (1950) that he treats as the course's guiding spirit:
+
+![CS285 Lecture 1, slide 38](/cs285/lec-1/slide-38.png)
+*Slide 38 · The closing slide — Turing's 1950 *Computing Machinery and Intelligence*. Don't try to engineer the adult mind by writing down all its rules; instead build a learner (the "child"), expose it to experience, and the adult mind emerges. This is precisely the deep RL research stance.*
 
 > *"Instead of trying to produce a program to simulate the adult mind, why not rather try to produce one which simulates the child's? If this were then subjected to an appropriate course of education, one would obtain the adult brain."*
 > — Alan Turing

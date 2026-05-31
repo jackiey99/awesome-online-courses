@@ -3,7 +3,6 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   title: "Awesome Online Courses",
   description: "An index + study notes for hand-picked online courses",
-  lang: "zh-CN",
   cleanUrls: true,
   base: "/awesome-online-courses/",
 
@@ -11,63 +10,13 @@ export default defineConfig({
 
   markdown: {
     math: true,
+    image: { lazyLoading: true },
   },
 
   themeConfig: {
-    nav: [
-      { text: "首页", link: "/" },
-      { text: "课程列表", link: "/courses/" },
-      {
-        text: "CS285",
-        items: [
-          { text: "Lecture 1 · 导论（中）", link: "/courses/cs285/lecture-01" },
-          { text: "Lecture 1 · Intro (EN)", link: "/courses/cs285/lecture-01.en" },
-        ],
-      },
-      { text: "GitHub", link: "https://github.com/jackiey99/awesome-online-courses" },
-    ],
-
-    sidebar: {
-      "/courses/cs285/": [
-        {
-          text: "CS285 · Deep Reinforcement Learning",
-          collapsed: false,
-          items: [
-            { text: "课程总览", link: "/courses/cs285/" },
-            {
-              text: "Lecture 1 · 导论",
-              collapsed: false,
-              items: [
-                { text: "🇨🇳 中文笔记", link: "/courses/cs285/lecture-01" },
-                { text: "🇬🇧 English notes", link: "/courses/cs285/lecture-01.en" },
-              ],
-            },
-          ],
-        },
-      ],
-      "/courses/": [
-        {
-          text: "已收录课程",
-          items: [
-            { text: "CS285 Deep RL", link: "/courses/cs285/" },
-          ],
-        },
-      ],
-    },
-
     socialLinks: [
       { icon: "github", link: "https://github.com/jackiey99/awesome-online-courses" },
     ],
-
-    outline: {
-      level: [2, 3],
-      label: "本页目录",
-    },
-
-    docFooter: {
-      prev: "上一篇",
-      next: "下一篇",
-    },
 
     search: {
       provider: "local",
@@ -75,19 +24,86 @@ export default defineConfig({
         locales: {
           root: {
             translations: {
-              button: { buttonText: "搜索", buttonAriaLabel: "搜索" },
+              button: { buttonText: "搜索文档", buttonAriaLabel: "搜索文档" },
               modal: {
                 noResultsText: "无匹配结果",
-                resetButtonTitle: "清除",
-                footer: {
-                  selectText: "选择",
-                  navigateText: "切换",
-                  closeText: "关闭",
-                },
+                resetButtonTitle: "清除查询",
+                footer: { selectText: "选择", navigateText: "切换", closeText: "关闭" },
               },
             },
           },
         },
+      },
+    },
+  },
+
+  locales: {
+    root: {
+      label: "简体中文",
+      lang: "zh-CN",
+      themeConfig: {
+        nav: [
+          { text: "首页", link: "/" },
+          { text: "课程列表", link: "/courses/" },
+          {
+            text: "CS285",
+            items: [
+              { text: "课程总览", link: "/courses/cs285/" },
+              { text: "Lecture 1 · 导论", link: "/courses/cs285/lecture-01" },
+            ],
+          },
+        ],
+        sidebar: {
+          "/courses/": [
+            {
+              text: "CS285 · Deep Reinforcement Learning",
+              collapsed: false,
+              items: [
+                { text: "课程总览", link: "/courses/cs285/" },
+                { text: "Lecture 1 · 导论", link: "/courses/cs285/lecture-01" },
+              ],
+            },
+          ],
+        },
+        outline: { level: [2, 3], label: "本页目录" },
+        docFooter: { prev: "上一篇", next: "下一篇" },
+        lastUpdatedText: "最后更新",
+        darkModeSwitchLabel: "外观",
+        sidebarMenuLabel: "菜单",
+        returnToTopLabel: "回到顶部",
+        langMenuLabel: "切换语言",
+      },
+    },
+
+    en: {
+      label: "English",
+      lang: "en-US",
+      link: "/en/",
+      themeConfig: {
+        nav: [
+          { text: "Home", link: "/en/" },
+          { text: "Courses", link: "/en/courses/" },
+          {
+            text: "CS285",
+            items: [
+              { text: "Overview", link: "/en/courses/cs285/" },
+              { text: "Lecture 1 · Introduction", link: "/en/courses/cs285/lecture-01" },
+            ],
+          },
+        ],
+        sidebar: {
+          "/en/courses/": [
+            {
+              text: "CS285 · Deep Reinforcement Learning",
+              collapsed: false,
+              items: [
+                { text: "Overview", link: "/en/courses/cs285/" },
+                { text: "Lecture 1 · Introduction", link: "/en/courses/cs285/lecture-01" },
+              ],
+            },
+          ],
+        },
+        outline: { level: [2, 3], label: "On this page" },
       },
     },
   },

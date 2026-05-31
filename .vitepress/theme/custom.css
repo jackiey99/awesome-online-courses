@@ -1,0 +1,163 @@
+/* ============================================================
+   Custom VitePress theme tweaks
+   - Larger, more readable typography
+   - Polished hero on the homepage
+   - Better media (images, tables) inside lecture notes
+   ============================================================ */
+
+:root {
+  /* Brand color — calmer indigo than the default Vue green,
+     reads better against monochrome lecture content. */
+  --vp-c-brand-1: #5b6cff;
+  --vp-c-brand-2: #4756d8;
+  --vp-c-brand-3: #3a47c0;
+  --vp-c-brand-soft: rgba(91, 108, 255, 0.14);
+
+  /* Typography — bump base size, give CJK its own stack so
+     Chinese feels native and proportional alongside Latin. */
+  --vp-font-family-base:
+    "Inter", "Helvetica Neue", "Helvetica", "Arial",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    "Noto Sans CJK SC", sans-serif;
+  --vp-font-family-mono:
+    "JetBrains Mono", "SF Mono", "Menlo", "Consolas",
+    "Liberation Mono", monospace;
+}
+
+html {
+  /* Default VitePress is 16px; nudge up. Affects everything via rem. */
+  font-size: 17px;
+}
+
+/* Slightly looser line height and wider content for long reading sessions. */
+.vp-doc {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.vp-doc p,
+.vp-doc li {
+  font-size: 1.025rem;
+}
+
+/* H1 / H2 / H3 — clearer hierarchy than VitePress defaults. */
+.vp-doc h1 {
+  font-size: 2.1rem;
+  letter-spacing: -0.015em;
+}
+.vp-doc h2 {
+  font-size: 1.55rem;
+  margin-top: 3rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--vp-c-divider);
+}
+.vp-doc h3 {
+  font-size: 1.2rem;
+  margin-top: 2.2rem;
+}
+
+/* Inline code stands out more without being loud. */
+.vp-doc :not(pre) > code {
+  background-color: var(--vp-c-brand-soft);
+  color: var(--vp-c-text-1);
+  font-size: 0.92em;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+
+/* Block quotes — lecture notes use these for instructor quotes. */
+.vp-doc blockquote {
+  border-left: 3px solid var(--vp-c-brand-1);
+  background: var(--vp-c-bg-soft);
+  padding: 0.6rem 1.2rem;
+  border-radius: 0 6px 6px 0;
+  color: var(--vp-c-text-2);
+}
+.vp-doc blockquote p {
+  margin: 0.4rem 0;
+}
+
+/* Tables in notes carry a lot of comparison logic — make them readable. */
+.vp-doc table {
+  display: table;
+  width: 100%;
+  font-size: 0.95rem;
+}
+.vp-doc th,
+.vp-doc td {
+  padding: 0.6em 0.9em;
+}
+.vp-doc th {
+  background: var(--vp-c-bg-soft);
+}
+
+/* Slide images embedded in notes — keep them framed and centered, scale on small screens. */
+.vp-doc img {
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
+  margin: 1rem auto;
+  display: block;
+  max-width: 100%;
+  background: white; /* slides are typically white-bg; harmonizes in dark mode */
+}
+
+/* Image figure caption pattern: <img> followed by *italic line*. */
+.vp-doc img + em,
+.vp-doc p > em:only-child {
+  display: block;
+  text-align: center;
+  color: var(--vp-c-text-3);
+  font-size: 0.92rem;
+  margin-top: -0.4rem;
+}
+
+/* ============================================================
+   Home page hero
+   ============================================================ */
+
+.VPHero .name,
+.VPHero .text {
+  font-size: 3rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.VPHero .tagline {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--vp-c-text-2);
+  max-width: 640px;
+}
+
+/* Feature cards — give them more breathing room. */
+.VPFeature {
+  padding: 1.6rem;
+}
+.VPFeature .title {
+  font-size: 1.15rem;
+}
+.VPFeature .details {
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* Nav bar — slightly larger, easier to scan. */
+.VPNavBar .title {
+  font-size: 1.05rem;
+}
+
+/* Outline (right rail) — bigger so it's easier to use as a TOC. */
+.VPDocAsideOutline .outline-link {
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   Dark-mode-only tweaks
+   ============================================================ */
+.dark .vp-doc img {
+  /* Keep slides on white inside the dark-mode card so they don't invert. */
+  background: #f7f8fa;
+  filter: brightness(0.92);
+}
+.dark .vp-doc blockquote {
+  background: var(--vp-c-bg-elv);
+}
