@@ -54,6 +54,7 @@ An index of online courses with recorded videos for learning various topics, inc
 | Name | Instructor | Institute | Video |
 | --- | --- | --- | --- |
 |[CS231n: Deep Learning for Computer Vision](https://cs231n.stanford.edu/)|Fei-Fei Li, Justin Johnson, Serena Yeung|Stanford|[Youtube](https://www.youtube.com/playlist?list=PLC1qU-LWwrF64f4QKQT-Vg5Wr4qEE1Zxk)|
+|[CME296: Diffusion & Large Vision Models](https://cme296.stanford.edu/)|Afshine Amidi, Shervine Amidi|Stanford|[Youtube](https://www.youtube.com/playlist?list=PLoROMvodv4rNdy8rt2rZ4T2xM0OjADnfu)|
 
 ## ML Systems
 
