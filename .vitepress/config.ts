@@ -1,16 +1,29 @@
 import { defineConfig } from "vitepress";
 
+const SITE_BASE = "/awesome-online-courses/";
+
 export default defineConfig({
   title: "Awesome Online Courses",
   description: "An index + study notes for hand-picked online courses",
   cleanUrls: true,
-  base: "/awesome-online-courses/",
+  base: SITE_BASE,
 
   srcExclude: ["README.md", "data/**/*.md", "pipeline/**/*.md"],
 
   markdown: {
     math: true,
     image: { lazyLoading: true },
+  },
+
+  // VitePress doesn't prepend `base` to absolute-path <img> srcs that came
+  // from markdown (e.g. ![](/foo.png) stays /foo.png and 404s on a project
+  // Pages site). Patch the final HTML so authors can keep writing /foo.png
+  // and have it resolve against the deployed base path.
+  transformHtml(code) {
+    return code.replace(
+      /<img\b([^>]*?)\bsrc="\/(?!\/)(?!awesome-online-courses\/)([^"]+)"/g,
+      `<img$1 src="${SITE_BASE}$2"`,
+    );
   },
 
   themeConfig: {
