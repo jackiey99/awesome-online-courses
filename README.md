@@ -6,6 +6,10 @@ An index of online courses with recorded videos for learning various topics, inc
 
 - [Machine Learning](#machine-learning)
 - [Deep Learning](#deep-learning)
+- [Reinforcement Learning](#reinforcement-learning)
+- [Natural Language Processing](#natural-language-processing)
+- [Computer Vision](#computer-vision)
+- [ML Systems](#ml-systems)
 - [Data Structure and Algorithm](#data-structure-and-algorithm)
 - [System](#system)
 - [Mathematics](#mathematics)
@@ -17,28 +21,45 @@ An index of online courses with recorded videos for learning various topics, inc
 | --- | --- | --- | --- |
 |[CS4780/CS5780: Machine Learning for Intelligent Systems](https://www.cs.cornell.edu/courses/cs4780/2018fa/)|Kilian Weinberger|Cornell|[Youtube](https://www.youtube.com/playlist?list=PLl8OlHZGYOQ7bkVbuRthEsaLr7bONzbXS)|
 |[Machine Learning, 2020](http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html)|Hung-yi Lee|NTU|[Youtube](https://www.youtube.com/watch?v=CXgbekl66jc&list=PLJV_el3uVTsPy9oCRY30oBPNLCo89yu49)|
-|[Reinforcement Learning](https://www.davidsilver.uk/teaching/)|David Silver|UCL|[Youtube](https://www.youtube.com/watch?v=2pWv7GOvuf0)|
 |[Probabilistic Graphical Models](https://sailinglab.github.io/pgm-spring-2019/)|Eric Xing|CMU|[Youtube](https://www.youtube.com/watch?v=Spj2OSYmtGg&list=PLoZgVqqHOumTY2CAQHL45tQp6kmDnDcqn&index=1)|
 |Information Theory, Pattern Recognition, and Neural Networks|David Mackay|University of Cambridge|[videolectures](http://videolectures.net/course_information_theory_pattern_recognition/)|
 
 ## Deep Learning
 | Name | Instructor | Institute | Video |
 | --- | --- | --- | --- |
-| [CS 285 Deep Reinforcement Learning](https://rail.eecs.berkeley.edu/deeprlcourse/)| Sergey Levine | UC Berkeley |[Youtube](https://www.youtube.com/watch?v=SupFHGbytvA&list=PL_iWQOsE6TfVYGEGiAOMaOzzv41Jfm_Ps&index=2)|
 | [DS-GA 1008 Deep Learning](https://atcold.github.io/pytorch-Deep-Learning/)| Yann LeCun | NYU |[Youtube](https://www.youtube.com/watch?v=0bMe_vCZo30)|
 | [Practical Deep Learning for Coders](https://course.fast.ai/)|Jeremy Howard|fast.ai|[Videos](https://course.fast.ai/videos/?lesson=1)|
 | [11-785 Introduction to Deep Learning](http://deeplearning.cs.cmu.edu/)|Bhiksha Raj|CMU|[Youtube](https://www.youtube.com/watch?v=VO5vKowfMOQ)|
-|[CS224n: Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/)|Chris Manning|Stanford|[Youtube](https://www.youtube.com/playlist?list=PLoROMvodv4rOhcuXMZkNm7j3fVwBBY42z)|
 |[CS294-158-SP20 Deep Unsupervised Learning](https://sites.google.com/view/berkeley-cs294-158-sp20/home)|Pieter Abbeel|Berkeley|[Youtube](https://youtu.be/V9Roouqfu-M)|
 |[ESE 680 Graph Neural Networks](https://gnn.seas.upenn.edu/)|Alejandro Ribeiro|U Penn|[Youtube](https://www.youtube.com/playlist?list=PL-BLJBpGQyLOBRhqEry2rsibv14hH5A2u) |
 
+## Reinforcement Learning
 
-## NLP
 | Name | Instructor | Institute | Video |
 | --- | --- | --- | --- |
-|[Reinforcement Learning of Large Language Models, Spring 2025](https://ernestryu.com/courses/RL-LLM.html) | Ernest K. Ryu | UCLA | [Youtube](https://www.youtube.com/watch?v=q9972BRoXzQ)|
-|[CS224N: Natural Language Processing with Deep Learning](https://web.stanford.edu/class/cs224n/)|Christopher Manning|Stanford|[Youtube](https://www.youtube.com/playlist?list=PLoROMvodv4rMFqRtEuo6SGjY4XbRIVRd4)|
+|[Reinforcement Learning](https://www.davidsilver.uk/teaching/)|David Silver|UCL|[Youtube](https://www.youtube.com/watch?v=2pWv7GOvuf0)|
+|[CS 285 Deep Reinforcement Learning](https://rail.eecs.berkeley.edu/deeprlcourse/)|Sergey Levine|UC Berkeley|[Youtube](https://www.youtube.com/watch?v=SupFHGbytvA&list=PL_iWQOsE6TfVYGEGiAOMaOzzv41Jfm_Ps&index=2)|
+|[Reinforcement Learning of Large Language Models, Spring 2025](https://ernestryu.com/courses/RL-LLM.html)|Ernest K. Ryu|UCLA|[Youtube](https://www.youtube.com/watch?v=q9972BRoXzQ)|
 
+## Natural Language Processing
+
+| Name | Instructor | Institute | Video |
+| --- | --- | --- | --- |
+|[CS224N: Natural Language Processing with Deep Learning](https://web.stanford.edu/class/cs224n/)|Christopher Manning|Stanford|[Youtube](https://www.youtube.com/playlist?list=PLoROMvodv4rMFqRtEuo6SGjY4XbRIVRd4)|
+|[CS336: Language Modeling from Scratch, Spring 2025](https://cs336.stanford.edu/spring2025/)|Percy Liang, Tatsunori Hashimoto|Stanford|[Youtube](https://www.youtube.com/playlist?list=PLoROMvodv4rOY23Y0BoGoBGgQ1zmU_MT_)|
+|[Introduction to Generative AI, 2024 Spring](https://speech.ee.ntu.edu.tw/~hylee/genai/2024-spring.php)|Hung-yi Lee|NTU|[Youtube](https://www.youtube.com/playlist?list=PLJV_el3uVTsPz6CTopeRp2L2t4aL_KgiI)|
+
+## Computer Vision
+
+| Name | Instructor | Institute | Video |
+| --- | --- | --- | --- |
+|[CS231n: Deep Learning for Computer Vision](https://cs231n.stanford.edu/)|Fei-Fei Li, Justin Johnson, Serena Yeung|Stanford|[Youtube](https://www.youtube.com/playlist?list=PLC1qU-LWwrF64f4QKQT-Vg5Wr4qEE1Zxk)|
+
+## ML Systems
+
+| Name | Instructor | Institute | Video |
+| --- | --- | --- | --- |
+|[Full Stack Deep Learning, 2022](https://fullstackdeeplearning.com/course/2022/)|Sergey Karayev, Charles Frye, Josh Tobin|The Full Stack|[Youtube](https://www.youtube.com/playlist?list=PL1T8fO7ArWleMMI8KPJ_5D5XSlovTW_Ur)|
 
 ## Data Structure and Algorithm
 
@@ -50,7 +71,9 @@ An index of online courses with recorded videos for learning various topics, inc
 
 | Name | Instructor | Institute | Video |
 | --- | --- | --- | --- |
-| [MIT 6.824: Distributed Systems](https://pdos.csail.mit.edu/6.824/) | Robert Morris | MIT | [Youtube](https://www.youtube.com/watch?v=cQP8WApzIQQ&list=PLrw6a1wE39_tb2fErI4-WkMbsvGQk9_UB)|
+|[MIT 6.824: Distributed Systems](https://pdos.csail.mit.edu/6.824/)|Robert Morris|MIT|[Youtube](https://www.youtube.com/watch?v=cQP8WApzIQQ&list=PLrw6a1wE39_tb2fErI4-WkMbsvGQk9_UB)|
+|[MIT 6.S081: Operating System Engineering](https://pdos.csail.mit.edu/6.S081/)|Robert Morris, Frans Kaashoek|MIT|[Youtube](https://www.youtube.com/playlist?list=PLMF2PpA06Sb0Nj-7TDAQpUs0vP5pA28VG)|
+|[CMU 15-445: Database Systems](https://15445.courses.cs.cmu.edu/)|Andy Pavlo|CMU|[Youtube](https://www.youtube.com/playlist?list=PLSE8ODhjZXjYDBpQnSymaectKjxCy6BYq)|
 
 ## Mathematics
 
@@ -62,7 +85,7 @@ An index of online courses with recorded videos for learning various topics, inc
 |[MIT 18.06 Linear Algebra](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/)|Gilbert Strang|MIT|[Youtube](https://www.youtube.com/watch?v=ZK3O402wf1c&list=PL49CF3715CB9EF31D&index=1)|
 |[Convex Optimization](http://www.stat.cmu.edu/~ryantibs/convexopt/)|Ryan Tibshirani|CMU|[Youtube](https://www.youtube.com/watch?v=Di9f47LAzHQ&list=PLRPU00LaonXQ27RBcq6jFJnyIbGw5azOI&index=1)|
 |[MIT 6.262 Discrete Stochastic Process](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-262-discrete-stochastic-processes-spring-2011/)|Robert Gallager|MIT|[Youtube](https://www.youtube.com/watch?v=7CYXy9J4Aao&list=PLEEF5322B331C1B98)|
-|[MIT 6.041 Probabilistic Systems Analysis and Applied Probability]|John Tsitsiklis|MIT|[Youtube](https://www.youtube.com/playlist?list=PLUl4u3cNGP61MdtwGTqZA0MreSaDybji8)|
+|[MIT 6.041 Probabilistic Systems Analysis and Applied Probability](https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/)|John Tsitsiklis|MIT|[Youtube](https://www.youtube.com/playlist?list=PLUl4u3cNGP61MdtwGTqZA0MreSaDybji8)|
 |[MIT 18.650 Statistics for Applications](https://ocw.mit.edu/18-650F16)|Philippe Rigollet|MIT|[Youtube](https://www.youtube.com/watch?v=VPZD_aij8H0&list=PLUl4u3cNGP60uVBMaoNERc6knT_MgPKS0)|
 
 ## Productivity
