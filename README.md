@@ -87,6 +87,7 @@ An index of online courses with recorded videos for learning various topics, inc
 |[MIT 6.262 Discrete Stochastic Process](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-262-discrete-stochastic-processes-spring-2011/)|Robert Gallager|MIT|[Youtube](https://www.youtube.com/watch?v=7CYXy9J4Aao&list=PLEEF5322B331C1B98)|
 |[MIT 6.041 Probabilistic Systems Analysis and Applied Probability](https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/)|John Tsitsiklis|MIT|[Youtube](https://www.youtube.com/playlist?list=PLUl4u3cNGP61MdtwGTqZA0MreSaDybji8)|
 |[MIT 18.650 Statistics for Applications](https://ocw.mit.edu/18-650F16)|Philippe Rigollet|MIT|[Youtube](https://www.youtube.com/watch?v=VPZD_aij8H0&list=PLUl4u3cNGP60uVBMaoNERc6knT_MgPKS0)|
+|[Math E-222: Abstract Algebra](http://www.infocobuild.com/education/audio-video-courses/mathematics/math-e222-harvard.html)|Benedict Gross|Harvard|[Youtube](https://www.youtube.com/playlist?list=PLzUeAPxtWcqzr80lS25FrzMn7a36BuXhj)|
 
 ## Productivity
 
