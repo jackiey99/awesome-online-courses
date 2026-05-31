@@ -1,0 +1,307 @@
+let's say that you would like to build a
+system to enable a robot like this to
+pick up objects so this is what the
+robot sees it sees images from its
+camera and the goal is to Output uh
+coordinates in space using some kind of
+machine that you're going to build
+that will allow it to pick up objects
+successfully
+now this is actually a pretty tricky
+problem to solve because while you might
+think that all you have to do is
+localize where the objects are in the
+picture and just output their position
+in reality the right way to pick up an
+object is actually actually has a lot of
+special cases and exceptions that you
+need to take into account so if you want
+to really understand the problem and
+design a solution manually maybe
+rigid objects are you know fairly
+straightforward to pick up you just put
+the fingers on either side
+but if the object is awkwardly shaped
+and has a complex Mass distribution then
+you need to really make sure you pick it
+up close to the center of mass so it
+doesn't fall out of the gripper and if
+the object is solved in the formable
+then an entirely different set of
+strategies might be more appropriate
+like pinching it
+so anytime we have a situation that has
+so many special cases exceptions and
+little details it makes it very
+appealing to use machine learning so
+it'd be really nice to try to set this
+up as a machine learning problem where
+instead of having to manual engineer all
+these little exceptions you could just
+run uh some kind of a general purpose
+machine learning procedure maybe with
+convolutional neural networks to extract
+suitable grasp locations from the image
+automatically
+the trouble is that the standard tools
+that we have in supervised learning
+don't make this very easy because they
+require us to somehow obtain a data set
+consisting of pairs of images and
+suitable grasp locations but the problem
+is that even people can't necessarily
+determine grasp locations very well
+because they're really a property of the
+physical interaction between the robot
+and its environment not necessarily
+something that is very well informed by
+human intuition to put it simply we
+don't have a lot of experience picking
+things up with robot fingers
+so can we somehow use machine learning
+but avoid the need to manually supervise
+this process
+well what if we actually get the robots
+themselves to collect a lot of Trials to
+attempt different grasps and see what
+works and what doesn't work
+that in essence is the main idea behind
+reinforcement learning and the methods
+that we'll discuss in this course will
+in some ways address different uh
+methods for tackling this type of
+problem
+so in a reinforcement learning setting
+we wouldn't try to manually specify in
+this case where the robot should grasp
+objects instead the machines themselves
+will collect the data set that doesn't
+necessarily consist of good examples but
+examples that are labeled with our
+outcome so it'll be images what the
+robot did and whether that led to a
+failure or success more generally we
+would refer this as a reward function
+the robot would be rewarded for success
+and not for failure
+and then this will be used in
+combination with a reinforcement
+learning algorithm a reinforcement
+learning algorithm is doing something
+very different from a supervised
+learning algorithm it's not just trying
+to copy everything that's in the data
+it's trying to use these success failure
+labels these reward labels to figure out
+what it should do in order to maximize
+the number of successes or to maximize
+the reward and then perhaps we could get
+a policy that's actually better than the
+average behavior that the robot carried
+out while it's collecting data that
+actually uses that experience to improve
+upon what it would typically do
+Okay so
+that's kind of the bigger picture but
+now let's let's put this in the context
+of what has been happening lately in
+artificial intelligence what are some
+recent advances we've seen in AI well
+the last few years have been very active
+in artificial intelligence we've seen
+pretty impressive advances for example
+in the ability of AI systems to generate
+pictures in response in response to a
+textual prompt you can for example get a
+diffusion model that where you can tell
+it please provide a vibrant portrait
+painting of Salvador to leave a half
+robot face and will actually generate
+plausibly looking pictures showing that
+we could get language models that can
+carry out conversations that can tell
+you jokes about cows going to study
+bowline Sciences at Harvard
+you can get large language models that
+act as assistants that can explain jokes
+that can even answer complex coding
+prompts
+and even outside of the kind of uh
+standard generative modeling
+applications
+we've seen a lot of interesting results
+for example in biological sciences we
+can get generative models that will
+produce uh proteins that will bind to
+certain kinds of viruses
+so data driven AI has really Advanced
+tremendously and we've seen a lot of
+advances from image generation to text
+to all sorts of other areas
+a lot of these advances that have been
+uh very much in the news in the last few
+years are based on in some sense a very
+similar idea to the supervised learning
+approach uh that I presented as kind of
+a straw man in my discussion of the
+robotic example from before the
+principle behind the image generation
+models the language models in many of
+these other settings is based on
+essentially a kind of density estimation
+estimating P of X or conditional that's
+the estimation would be of Y given X so
+per language models typically estimate
+the distribution of natural language
+sentences the image generation models
+might be conditional Distributors over
+images conditioned on that prompt but
+it's a very similar kind of idea and in
+both cases these are really just
+massively scaled up versions of the kind
+of density estimation that we learn
+about in statistics class and of course
+the a very important thing to remember
+when you're doing density estimation
+when you're doing a Centric supervised
+learning is that what you're learning
+about is the distribution in the data
+and that makes it very important to
+think about where the data actually
+comes from
+so if the data consists of
+large amounts of images mined from the
+web for example and those images are
+labeled as textual problems then what
+you're really learning about is the kind
+of images that people put on the web the
+kind of pictures for example they might
+photograph in the case of text you're
+learning about what people tend to type
+on keyboards now these are very good
+things to learn from if your goal is to
+generate content that is similar to what
+humans would have generated if your goal
+is to generate the kinds of paintings
+that humans would have drawn on the kind
+of text that humans would have written
+and that can give you a very powerful
+capability but of course that's not the
+only thing that we want from our
+autonomous systems
+so what does reinforced learning do
+differently well before we talk about
+that we need a little bit of kind of
+historical background on what modern
+reinforce learning is and where it came
+from and really modern reinforcement
+learning traces this lineage to two
+previous disciplines the first one which
+is the one that's actually called
+reinforcement learning actually has its
+roots in it's like in Psychology and
+particular in the study of animal
+behavior so this is a photograph Skinner
+who is a very well-known uh researcher
+who studied the behavior of animals in
+response to various kinds of
+reinforcement and much of the work
+stemming from that line of research
+forms the Bedrock of the kind of
+reinforcement learning that we do today
+in computer science Which models an
+agent that's interacting with this
+environment and adapting to its
+environment in response to Rewards
+but there's a different uh kind of
+pedigree that also heavily influences
+modern reinforcement learning which has
+to do with controls optimization and
+also has its roots and things like
+evolutionary algorithms this is a video
+from 1994 produced by Carl Sims that
+shows an optimization procedure which
+Tims did not call reinforcement learning
+if you refer to it as Evolution but had
+some more similar principles that was
+used to optimize both the form and the
+behavior of these virtual creatures so
+these virtual creatures would do things
+like locomote swim run around they would
+even fight each other and their
+behaviors would be optimized they would
+be immersion so this is very different
+from the kind of machine learning that
+we think about today where the goal is
+to reproduce the behavior of humans hear
+the behavior the goal was to actually
+produce behaviors that did not need to
+be designed by humans
+and if we fast forward uh a couple
+decades we can see with more
+sophisticated algorithms for in this
+case automated optimization and control
+this is a result by you will tell so
+that shows a humanoid kind of simulated
+robot automatically figure out how to do
+things like Walk and Run and so on
+so these two disciplines together
+actually influence the study of modern
+deep reinforcement learning which could
+be thought of as the combination of
+large-scale optimization with the kinds
+of uh algorithmic ideas and Foundations
+derived from classical reinforcement
+learning and that's actually very
+powerful because once we take those
+classical reinforcement learning ideas
+and we'll scale them up with the tools
+of modern computation and optimization
+then we can get very powerful emerging
+behaviors
+so many of you probably know about
+alphago there was a very traumatic
+moment in the alphago championship match
+that was sometimes referred to as move
+37 where the alphago system
+performed a move that experts watching a
+game are very surprised by
+and
+it was surprising because this is not
+the kind of move that human players
+would have likely made in these kind of
+situations it was an emerging Behavior
+now the generative AI results that we've
+seen in recent years are very impressive
+precisely because they look like
+something that a person might produce
+the pictures of pictures that a person
+might draw the most impressive results
+of reinforcement learning are actually
+impressive precisely because no person
+had thought of it what makes the results
+in alphago so interesting to us is the
+emergence the fact that an automated
+algorithm could discover a solution that
+goes beyond what people would do
+and this is really really important if
+we're going to take the study of AI
+seriously because
+we probably won't get the kinds of
+flexible intelligence that we associate
+with humans if we merely copy human
+behavior we really have to figure out
+how to get algorithms that discover
+solutions that are the best solution to
+the task rather than merely the solution
+that a person would have taken because
+then when placed in novel situations the
+election respond intelligently
+so this is the the motivational program
+going to talk about
+and in the remainder of this lecture
+I'll take you through the structure of
+the course and then describe a little
+bit more some of the motivations for why
+we should study deep reinforcement
+learning today

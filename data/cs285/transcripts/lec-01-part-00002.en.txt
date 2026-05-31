@@ -1,0 +1,554 @@
+okay let's talk about what we'll cover
+in the class
+so
+this course goes through a variety of
+deep reinforcement learning methods
+construed very broadly but we'll start
+with some Basics we'll start by talking
+about how we can take a journey from
+supervised learning uh methods to
+decision making methods provide some
+definitions and generally come to
+understand the reinforcementing problem
+then we'll have a unit on model 3
+reinforcement learning algorithms where
+we'll cover Q learning policy gradient
+and actual critic methods and you'll
+have some homeworks where you'll
+Implement each of these then we'll have
+another unit on model based algorithms
+we'll talk about planning optimal
+control sequence models images and
+things like that and then we'll have a
+variety of more advanced topics we're
+going to cover exploration algorithms
+we're going to cover algories for
+offline reinforcement learning which are
+methods that can use both data and
+reinforcement learning methods
+we'll talk about inverse reinforcement
+learning which deals with inferring
+objective functions from behavior and
+have some discussion there about the
+relationship between reinforcement
+learning methods and things like
+probabilistic inference and then we'll
+have a few Advanced topics like metal
+learning and transfer learning maybe
+hierarchical RL and a set of research
+talks and invited lectures so that's the
+overall overview of the class you're
+going to have five assignments uh there
+will be an assignment of limitation
+learning policy gradients Q learning and
+after credit algorithms model based RL
+and the last one will be on offline RL
+and there will be a final project the
+final project is a research level
+product project of your choice you can
+form a group of up to two to three
+students and you're more than welcome to
+start on this project early
+the students every year have some
+questions about our expectations for the
+scope of this project roughly speaking
+you should think about it as roughly the
+level of a paper that you might submit
+for example to a workshop if you're not
+sure about the scope of your project
+definitely come into office hours to
+talk to the Tas or to myself
+we will have multiple rounds of feedback
+for you for your project so we'll have a
+project proposal deadline and our
+project Milestone report these are
+really meant for you we strongly
+encourage you to write up your plan to
+describe potential concerns you know
+about your plan and so on and we'll give
+you feedback on those so the proposal
+and the Milestone are not greater very
+strictly they really meant much more as
+a way for you to get feedback on your
+project Plan before the final report at
+the end of the semester
+you'll be great at 50 on the homeworks
+40 on the project and ten percent on
+quizzes after every lecture
+and
+you'll have a total of five or eight
+days for your homeworks don't exceed
+those five late days those five late
+days total uh if you exceed them then we
+uh you know unfortunately cannot give
+you credit for that homework
+uh you also have a little bit of
+homework for today
+uh make sure that you're signed up for
+Ed uh UC Berkeley cs285
+all of you who have been signed up for
+the enrolled in the course officially
+would have receive an invitation for
+this
+we strongly encourage you to start
+forming project groups unless you want
+to work alone which is fine and take the
+lecture one quits so the lecture one
+quizzes post Seven Grade scope the
+lecture one quizzes uh very much a
+practice quiz it's not a there's not a
+real quiz there uh and it's really to be
+familiar with a great scope interface
+however what I want to focus on mainly
+in today's lecture is discussing why we
+should study reinforced learning what it
+is and a little bit of context for why I
+myself like to teach this class but
+let's start with some Basics what is
+reinforcement learning
+well reinforcement learning is really
+two things it's a mathematical formalism
+for learning based decision making and
+it's also an approach for learning
+decision making and control from
+experience
+and it's important to keep in mind these
+are somewhat separate because we could
+imagine taking the formalism and then
+applying all sorts of different methods
+to it so it's important not to confuse
+reinforcement learning the problem from
+reinforced learning the solution
+okay how does this differ from other
+machine learning topics well the kind of
+machine learning that most of you are
+probably familiar with is supervised
+learning supervised learning is fairly
+straightforward to Define you have a
+data set of inputs and outputs we refer
+them typically as X and Y and you want
+to learn to predict y from X so you want
+to learn some kind of function f of x
+which outputs values y that are close to
+the Y labels in the data set so for
+example F might be represented by a deep
+neural network that you would train via
+classificational regression to match the
+labels y
+and
+while the basic formulation of
+supervised machine learning is very
+straightforward
+supervised machine learning methods make
+a number of assumptions that we often
+don't even think about because they're
+so natural but that are important to
+bring up if we're going to discuss how
+this difference from reinforcement
+learning
+supervised learning typically assumes
+what is called independent and
+identically distributed data this is
+such an obvious assumption in some ways
+especially for someone who studied
+machine learning that we often don't
+make it explicit but what it means is
+that all of these X Y pairs in your data
+set
+are independent of one another in the
+sense that the label for One X doesn't
+influence the label for another X
+and they're distributed identically in
+the sense that the true function that
+produced the label y from X is the same
+for all the samples it's almost an
+obvious statement but it's something
+that is important to keep in mind
+supervised learning also assumes that
+our data set is labeled in the sense
+that every X we've seen in D also has an
+accompanying Y and that Y is the true
+label for the X
+this is very natural if you're doing
+things like image classification with
+labels obtained from humans but remember
+how we discussed in the grasming example
+this can actually be pretty unnatural if
+you want a robot to learn how to grasp
+objects it's actually a very strong
+assumption to assume that you're given a
+set of images with ground truth optimal
+grasp locations
+reinforcement learning does not assume
+that the data is independent identically
+distributed in the sense that previous
+outputs influence future inputs things
+are Arrangement temporal sequence and
+the past influences the future
+typically the ground truth answer is not
+known it's only known how good a
+particular outcome was whether it was a
+failure or a success or more generally
+what its reward value was
+so in reinforcement learning
+you might collect data but you can't
+simply copy that data that doesn't
+actually lead to success the data might
+tell you which things were successful
+and which things fail although even
+those labels are difficult to interpret
+properly because if you have a sequence
+of events that led to a failure you
+don't know which event which particular
+choice in that sequence was the one that
+precipitated the failure this is not
+unlike
+human decision making perhaps you've got
+a really bad grade at the end of a
+course well it wasn't the fact that you
+looked looked up your grade on Cal
+Central that caused you to get the bad
+grade it was something you did earlier
+in the class perhaps the fact that you
+did poorly on an exam
+at the time perhaps you didn't realize
+that this would lead you to fail the
+course so this is very much an issue
+that we have in reinforcement learning
+referred to as credit assignment where
+the decision that actually results in a
+bad outcome or a good outcome might not
+itself be labeled with a higher low
+reward the reward might only happen
+later
+so we need to take this data which is
+not labeled with crunch with optimal
+outputs and might involve these delayed
+rewards run reinforcement learning on it
+and hopefully get a behavior that is
+better than the behavior we saw before
+so that's really the challenge in
+reinforcement
+so let's try to make this a little bit
+more precise in supervised learning you
+have an input X and you have an output Y
+and you have a data set that consists of
+X Y pairs the goal is to learn a
+function
+that takes an X and approximates Y and
+typically this function has some
+parameters which we refer to as Theta
+these might be for example the weights
+in a neural network
+in reinforcement learning we have a kind
+of a cyclical online learning procedure
+where an agent interacts with the world
+the agent chooses actions a t at every
+point in time and the world responds
+with the resulting State s t plus 1 and
+reward signal and the reward signal
+simply indicates how good that state is
+but it doesn't necessarily tell you if
+the action that you just took was a good
+or bad action perhaps you got lucky and
+landed in a good state or perhaps you
+did something really good earlier that
+caused you to get into a good State now
+the input to our agent is going to be
+the state St at each time step so this
+kind of the analog of X the output is 80
+at each time step
+the data which is collected by the agent
+itself classically consists of sequences
+of States actions and rewards rewards
+are numbers scalar values
+and whereas in supervised learning the
+data is given to you you don't have to
+worry about
+who gave you the data it's just provided
+to you as a set of XY tuples in
+reinforcement learning you have to pick
+your own actions and collect your own
+data so not only do you have to worry
+about the fact that the actions in your
+data set might not be the optimal
+actions you have to also actually decide
+how that data will be collected
+and your goal is to learn a policy Pi
+Theta which Maps States s to actions a
+and just like f Pi has parameters Theta
+so those might again be the weights in a
+neural network
+and a good policy is one that maximizes
+the cumulative total reward so not just
+the rewarding the point in time but the
+total reward the agent receives
+so that involves strategic reasoning
+maybe you might do something that might
+seem unrewarding now to attain higher
+rewards later
+so
+let's talk about some examples of how
+problems could be cast in the
+terminology of reinforcement learning
+let's say that you'd like to train a dog
+to perform some trick right so in this
+case the actions might be the muscle
+contractions of the dog's muscles the
+observations might be what the dog
+perceives through its sense of sight and
+smell the reward might be the treat that
+it gets and the dog will then learn to
+do whatever maximize that reward which
+might be the trick that you want to
+perform because you're rewarded with
+food when the dog performs the tree the
+trick successfully
+okay here's another example maybe you
+have a robot its actions might be the
+motor current or pork some kind of
+actuation command sent to its Motors its
+observations might be the readings from
+its sensors like camera amateurs and its
+reward might be some measure of test
+success maybe this robot needs to run as
+fast as possible to reach your
+destination so its reward function might
+be the running speed or it might be the
+whether it reached the destination or
+not just maybe it receives a plus one
+when it reaches the destination
+successfully and a minus one otherwise
+here's another problem let's say you
+want to manage inventory route goods
+between different warehouses in order to
+maintain stock levels
+perhaps the actions are which inventory
+to purchase
+the observations are the current
+inventory levels and the reward might be
+the profit you make perhaps you have to
+pay if you want to store inventory for a
+long time so your profits will be lower
+so you can see that this formulation is
+very general many different problems can
+be cast into the framework of
+reinforcement
+we'll of course make all this a lot more
+precise later so this is a very high
+level introduction don't worry yet if
+the particular details aren't very clear
+will make us a lot more precise in later
+lectures
+but for now let me just give you some
+examples of the kinds of things that
+reinforce some learning methods could do
+one of the things that reinforcement
+learning is very good at is learning
+policies for physically complex tasks
+tasks where it might be very difficult
+for a person to describe precisely how
+the tasks should be performed but much
+easier to find the reward like in this
+case the rewards that the nails should
+be hammered in and the reinforced
+learning algorithm figures out how to
+control this robotic hand to move the
+hammer to hammer in the nail
+here's another complex physical task
+here this quadrupedal robot needs to be
+able to jump over different obstacles
+now coding up manually a skill for
+jumping like this is very tough but
+reinforcement one can learn the
+actuations that will allow the robot to
+jump in different locations to various
+distances and so on
+it can even perform more physically
+complex tasks so here this in the next
+clip the quadrupedal robot uh this is a
+baseline method so don't worry about
+this share this quadrupedal robot needs
+to figure out how to stand on its hind
+legs and balance and that's also very
+difficult to do manually but with an
+appropriate reinforced morning method
+that's actually possible
+impact reinforcement learning has been
+applied very very widely to robotic
+problems here's a an even more recent
+work and this is from eth Zurich showing
+a robot using reinforcement with a
+combination of simulated optimization to
+learn various agile skills and you can
+see that it might clamor onto obstacles
+and things like that
+now the other thing that reinforced
+learning is great at is coming up with
+unexpected Solutions I alluded to this
+before with the alphago example here's
+another example which you'll actually
+Implement in your homeworks where a key
+learning algorithms learn to play Atari
+and discover the strategy that if you
+bounce the ball up over the bricks then
+it will bounce around you'll get lots of
+points
+reinforcement can also be applied at
+larger scale in the real world this is a
+project that was done at a company
+called Everyday Robots versus alphabet
+company where the robots learn to sort
+trash so the idea is that if people put
+trash into recyclables that should
+actually go into the compost then the
+robot can come and sort it the robots
+here learn in the real world
+in both in these classroom environments
+where they can practice and in like
+actual Office Buildings and these
+vision-based skills that are kind of
+similar in spirit to the ones that I
+mentioned in the beginning uh
+can then pick up and move objects in
+real world Office Buildings so that's
+pretty neat that you can actually
+practice these things you can practice
+them on the job you can practice them in
+the real world
+and it's of course not just for games
+and robots
+um
+I I really like this next example this
+is work that was done by Kathy Wu who's
+now a professor at MIT and was
+previously a PhD student here at UC
+Berkeley and what Kathy was working on
+his reinforcement learning algorithms
+for controlling traffic
+um this is a kind of a toy example where
+these cars drive in a circle and what
+tends to happen even in a simple
+circular environment like this if you
+have a very uh reasonable a very
+accurate model of what human drivers
+behave you'll actually get traffic jams
+forming spontaneously so cars will kind
+of bunch up and when they Bunch up like
+this they'll actually have spontaneously
+form traffic jams even though they drive
+in a circle
+so what Kathy then did is she optimized
+the reinforced learning policy which
+will be shown next for the car shown in
+red
+to not optimize its its own speed but to
+optimize the speed of the entire circle
+and you can see that what this car in
+red is going to do is going to actually
+slow down and wait for everybody to
+resolve the traffic jam and by going a
+little bit slower it'll actually avoid
+the formation of traffic jams in the
+entire circle
+Kathy also experimented with this in
+other settings this is a a figure eight
+kind of intersection and as you might
+expect cars will Bunch up at the center
+section and cause delays so if there's
+an autonomous car that is trying to
+optimize the uh driving speed of all the
+cars the autonomous car will actually
+slow down a little bit
+and regulate the traffic so that
+everyone passes through the intersection
+at exactly the perfect time now this
+example maybe is a little bit synthetic
+but there's a considerable follow-up
+work to this showing that in fact
+autonomous regulation of traffic with
+reinforced money can be quite a powerful
+tool
+reinforcement has also been used very
+widely with language models uh many of
+you are probably familiar with the
+advances in recent language models of
+things like chat GPT and many other
+systems like anthropics Claude or
+Google's Bard which use large amounts of
+data to train models that will fulfill
+user requests
+and this is an example on the right
+where someone asks child should be T to
+explain how RL with human feedback works
+for language models and it produces some
+kind of explanation
+now
+by themselves large language models
+train on lots of internet data
+can solve their sophisticated problems
+but it's quite difficult to persuade
+them to do this because these models are
+basically trying to complete text based
+on what they learned from internet data
+so you have to prompt them in a way that
+kind of indexes into the right context
+reinforcement learning can be used to
+make this a lot easier by essentially
+training these models based on human
+scores so instead of just asking them to
+provide the kind of completions that are
+most likely from internet data they can
+actually be trained to respond to
+queries in ways that human readers find
+to be desirable and reinforced learning
+is actually a very important part of
+this
+reinforcement learning has also been
+used with image generation here's an
+example with a stable diffusion 1.4 if
+you ask it to generate a picture of a
+dolphin riding a bike it actually
+generates a picture that is not very
+good for this what you can do is you can
+take this image and you can give it to a
+captioning model in this case lava to
+produce a description of the image and
+then use RL where the reward function is
+given by the similarity between the
+description from lava and the original
+prompt so when lava looks at this
+picture it might say oh this is a
+picture of a dolphin above the water
+which is not very similar to Dolphin
+riding a bike so that so it receives a
+bad reward for that
+if we then optimize the image generation
+model with RL to maximize this reward
+it'll gradually make the image more
+appropriate to The Prompt so now there's
+both a dolphin and a bicycle although
+the dolphin is not writing the bicycle
+just yet with a few more iterations now
+there's a dolphin like creature that is
+in fact on a bicycle and with some more
+iterations the creature begins much more
+clearly a dolphin apparently putting
+some waves in the background makes it
+extra dolphin-like and then eventually
+there's a full-fledged picture of a
+dolphin riding a bicycle so reinforced
+learning can be used to optimize image
+generation models
+reinforcement one can also be used for
+other things this is an example on chip
+design where the actions correspond to
+placement of Chip parts per layout and
+the reward has to do with various chip
+design parameters like the cost or the
+congestion or latency of the chip
+so rainforcement can actually be applied
+By plot
+so I'll pause here and in the next
+section I'll discuss why we should study
+deep RL today

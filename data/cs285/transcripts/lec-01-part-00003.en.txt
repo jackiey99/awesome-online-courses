@@ -1,0 +1,915 @@
+but why should we study deep reinforce
+learning today
+well as I mentioned earlier
+recent progress on data-driven
+large-scale AI systems has led to some
+pretty impressive results but the
+methods that are trained to Simply copy
+data produced by humans they're mainly
+impressive because they produce things
+that look like human generated results
+but in many cases we actually want
+algorithms that will do better than the
+the typical human data either because
+the human data is not good or because
+it's hard to obtain or because we really
+do want the highest possible performance
+like in the case of alphago we want
+solutions that are impressive because
+the machine didn't need to be told how
+to do something because it discovered it
+on its own because it discovered a
+solution that was better or because I
+discovered a solution in a situation
+where it didn't have the benefit of
+human foresight to provide the kind of
+training data that it needed
+so recall that a lot of these very
+successful data driven methods work on
+the basis of density estimation
+which has particular implications it
+means that that these methods will
+produce the kinds of data that humans
+tend to produce but it also means that
+they in some sense won't go beyond uh
+good human behavior they might be much
+better at indexing into human data as a
+certainly the case with large language
+models they have a lot more knowledge
+but not necessarily better at utilizing
+that knowledge to solve concrete
+problems if you tell a large language
+model for example to persuade somebody
+that it's uh you know in their best
+interest to go see a doctor the language
+model probably won't be able to persuade
+them much better than a person would
+despite the fact that it has this huge
+uh
+repository of Internet knowledge to draw
+so where does that leave us well we've
+got these data-driven AI systems that
+learn about the real world from data
+potentially huge amounts of data but
+they don't really try to do better than
+the data in any meaningful sense and
+we've got these reinforcement learning
+systems and they can optimize a goal
+with a merging behavior and that seems
+like something that should address one
+of the major shortcomings of these
+data-driven AI methods but of course we
+need to figure out how to use these
+reinforced learning Methods at scale we
+need to combine them with the kinds of
+huge models and huge data sets that have
+been so successful and that's really
+where the Deep part in deep reinforced
+learning comes in
+so data driven AI is all about using
+data reinforcement learning is all about
+optimization
+deep reinforced learning is about this
+kind of optimization at scale and data
+without optimization basically doesn't
+allow us to solve new problems in New
+Waves it might allow us to be very good
+at indexing into large data sets to
+figure out solutions that are human-like
+but not necessarily solutions that are
+superhuman
+something that I I often like to bring
+up in the context of this discussion is
+an article written by Richard Sutton so
+Richard Sutton is actually one of the
+pioneers of reinforcement learning he
+was basically the person who popularized
+reinforcement learning and computer
+science whereas previous to that it was
+really a subject of study primarily in
+psychology
+so in many ways he sort of founded the
+study of reinforcement learning in CS
+Richard Sutton wrote an article in 2019
+called The Bitter lesson
+for those of you that haven't read it I
+very strongly encourage you to
+um to read through it it provides a very
+concise and very clear explanation or
+why we've seen this revolution in
+data-driven AI over the last few years
+and in that essay
+he writes that we have to learn the
+better lesson the building and how we
+think we think does not work in the long
+run the two methods that seem to scale
+arbitrarily are learning and search what
+he's arguing here is essentially that if
+we want very powerful learning machines
+we should build machines that are very
+good at using data and very good at
+being scaled up and not necessarily
+worry so much about engineering these
+systems so that they solve problems the
+way that we think that humans solve
+problems
+as an example
+we might imagine building a system for
+detecting cars by somehow engineering
+some detectors for like wheels and uh
+and headlights and and things like that
+and then try to program in that well a
+car someone has four wheels and like two
+headlights on the front and two in the
+back so if you see some wheels and some
+headlights well that's probably a car
+and we can basically program that in and
+that's actually how people used to build
+computer vision systems
+um maybe about a decade ago
+but these days we very rarely build
+perception systems that way instead what
+we do is we get lots of examples of cars
+labeled them as cars and let the
+computer figure it out and that's
+basically what Richard Sutton is saying
+that let's not worry so much about
+building in how we think the problem
+should be solved and let's instead of
+focus on scalable learning machines
+the machine Learning Community has had
+sort of a Perpetual debate about the
+degree to which we should be building in
+these kinds of components and that's why
+this this article uh was so influential
+but a lot of people who read this
+article take away kind of a funny uh
+impression Maybe
+that the emphasis is really on just
+scale and not really on the particular
+algorithm that is being scaled up so
+maybe it's okay if we just take let's
+say supervised learning methods and as
+long as we can figure out how to
+basically Shuffle more data into gpus or
+build larger server Farms that's really
+all that matters data plus lots of
+machines lots of computers and not not
+worry about how the problem is solved
+but that's not actually what the essay
+says notice how it says learning and
+search it doesn't say learning and gpus
+it doesn't say learning in Big Data so
+it says learning and search and there's
+a very important reason for that
+learning is about extracting patterns
+from data you look at the world you pull
+in some data and you train some learning
+machine on that and it finds the
+patterns that are in there
+search is about using computation to
+extract inferences Rich Sutton is using
+the term search in a very particular
+very technical sense that it's commonly
+used in reinforcement learning search
+doesn't mean like a star search
+necessarily search means some kind of
+computation or optimization
+that you use to extract inferences so
+search is not about getting more data
+searches about using what you've got to
+reach more uh interesting and more
+meaningful conclusions
+search is essentially optimal Center
+some kind of optimization process that
+uses typically iterative computation to
+make rational decisions
+and it's important to have both of those
+things
+because learning is what allows you to
+understand the world and searches what
+allows you to leverage that
+understanding for interesting emergent
+Behavior
+and you really need both if you want to
+have flexible and rational and optimal
+decision making in real world settings
+you need to understand how the world
+works and then instead of just using
+your understanding to regurgitate what
+you've seen before use that
+understanding to find a better solution
+than what you've seen before
+that's basically what deep reinforced
+learning tries to do
+data without optimization doesn't allow
+us to solve new problems in new ways
+optimization without data without
+experience it's hard to apply in the
+real world that side of things like
+simulators where you can write down
+equations of motion but if you have both
+of those things then you can start to
+solve real world problems in more
+optimal ways
+foreign
+here where this view is not just about
+how to control robots or how to play
+video games I specifically emphasized in
+the previous section that deep
+reinforcement learning methods have been
+applied very fruitfully to arrange our
+other domains too and there's actually a
+deep reason for this to try to
+understand this reason let's ask a very
+basic question let's ask the question
+why do we need machine learning
+and as an aside to help us answer that
+question we can ask an even more basic
+question why do we need brains
+the neuroscientist Daniel walper who
+knows quite a bit about brains had this
+to say on this topic he said we have a
+brain for one reason and one reason only
+and that's to produce adaptable and
+complex movements movement is the only
+way we have affecting the world around
+us and I believe that to understand
+movement is to understand the whole
+brain now it won't surprise you to know
+that Daniel walpert works on the
+Neuroscience of motor control but I
+think this quote is very
+thought-provoking and I think we can
+apply the same intuition to machine
+learning and formulate this posture load
+perhaps we need machine learning for one
+reason and one reason only and that's to
+produce adaptable and complex decisions
+that makes a lot of sense in the same
+way that your brain is only useful to
+you so far as it moves your body because
+that's the only way that it affects the
+world around it the machine Learning
+System is only useful insofar as it
+makes good decisions because that's the
+only thing it's outputting
+and now we can start to view all machine
+learning problems to this lens not as a
+problems of prediction but as problems
+of decision making this is obvious if
+you're controlling a robot your decision
+is how to move the joints it's obvious
+if you're driving a car your decision is
+how to steer the car but even something
+like a computer vision system in the end
+of the decision making system if I make
+a decision which could be the image
+label
+but really the decision has implications
+what happens Downstream of that image
+label maybe this perception system is
+detecting how many cars there are at an
+intersection and that label will be used
+to determine how to route traffic so it
+has long-term implications maybe the
+computer vision system is detecting
+people in a security camera and it's
+going to call security if it sees
+someone where they shouldn't be well
+that's definitely a decision that could
+lead to some very complex and very
+difficult to model outcomes if you view
+all of the outcomes of machine learning
+problems as decisions then it becomes
+clearer that all of machine learning
+problems are really reinforcement
+problems in Disguise it's just that in
+some cases we have the privilege of
+supervised label data that can Aid Us in
+solving
+and while this perspective might be a
+little bit reductionist I think it's
+important to keep in mind because it
+really tells us those building blocks
+learning and search are not just special
+things that we want for robots and video
+game playing but they're really General
+building blocks of AI systems
+and that brings us to some big questions
+like how do we build intelligent
+machines very general intelligent
+machines not uh just machines that can
+detect objects and images but you know
+things like this or this or this or if
+you are more
+um an affairsync line things like this
+right the kinds of intelligent machines
+that were popular as in science fiction
+that capture the imagination maybe
+they're quite a ways away but how do we
+start taking steps towards this kind of
+thing
+um
+I think deeply enforced learning forms a
+significant part of that and I think if
+we study it now we might put ourselves
+on the path to eventually answer some
+pretty fundamental questions
+so why should we study deep rainforced
+learning today
+well
+part of the answer is a big end-to-end
+trained models seem to work quite well
+if we use large data sets and large
+models like Transformers we can solve
+some pretty impressive problems
+and at the same time we have RL
+algorithms that we could feasibly
+combine with deep neural networks we've
+figured out a lot about how to implement
+RL algorithms so they can be used to
+train these kind of big end-to-end
+models
+and yet learning based control and truly
+open world settings remains on a major
+open challenge there are some initial
+results including the robotics results I
+presented the results in other domains
+that show the inkling of the capability
+of these systems but a lot of potential
+has yet to be realized and I'll talk
+about some of that potential in today's
+lecture and also over the course of this
+uh class
+and also discuss how some of these ideas
+can maybe bring us closer so it's a very
+exciting time I think to study this
+topic because in some ways many of the
+puzzle pieces are falling into place and
+yet major questions remain which could
+be questions that you yourselves could
+answer in your own future work
+but before I get into that I want to
+discuss a little bit about the broader
+picture of the reinforced learning field
+besides the basic problem of maximizing
+reward functions what are other problems
+that we need to solve to enable real
+world sequential decision making because
+this course is not just about reward
+maximization it's also about a variety
+of other problems that crop up and we
+study
+decision making and control in realistic
+data-driven settings and the kinds of
+methods that could address it
+for example basic reinforcement learning
+deals with maximizing Rewards but this
+is not the only problem that matters for
+sequential decision making we'll cover
+more advanced topics like learning
+reward functions from examples which is
+referred to as inverse reinforcement
+learning transferring knowledge between
+domains like transfer learning and metal
+learning learning to predict and using
+prediction to act and so on
+here's one question where do rewards
+come from if you're playing a video game
+it's pretty obvious maybe the reward
+function is the score in the video game
+you kind of don't have to think about it
+very hard but in other settings you do
+what if you want to get a robot to pick
+up a jug and pour a glass of water
+well any child could do this but just
+figuring out the reward function is the
+water in the glass is itself a complex
+perception problem
+there's a there's a paper that was
+published by some folks at UC Berkeley
+on exploration actually about four or
+five years ago and had this nice quote
+as human agents we are accustomed to
+operating with rewards that are so
+sparse that we only experience in them
+once or twice in a lifetime if at all
+what this means is that a lot of the
+things that humans do that are very
+impressive their War might be so delayed
+that it's very difficult to imagine
+learning just from that reward signal
+for example the reward that you'll
+receive for um let's say completing a
+PhD degree uh you'll only get that
+reward once and you maybe experience
+some satisfaction the real outcome might
+be what you do afterwards with that
+degree and yet you might set yourself on
+the path to do that clearly it's not
+something that you learn through trial
+and error by attempting many many PhD
+degrees in the past
+this is actually a quote that was posted
+on Reddit where the comments are applied
+with by writing I paid the author
+so we know that there is actually a
+structure in the human brain the basal
+ganglia which is actually responsible
+for the reward signal that the brain
+uses for reinforcement I mean this is
+actually something that's been studied
+quite a lot and it's a non-trivial
+structure you can see it you know it
+takes up quite a bit of space so clearly
+it's doing something sophisticated and
+it's not hard to imagine that for
+example for a cheetah that it needs to
+chase down a gazelle well if the cheetah
+learns through trial and error receiving
+the reward only when it caught the
+gazelle that's a pretty ridiculous image
+of a learning system if the cheetah just
+runs around on the Savannah randomly
+hoping to randomly stumble into a
+gazelle then randomly eat it and only
+then realize that kitchen gazelle is a
+good idea well that cheetah will
+probably die of starvation of course
+cheetahs don't learn in this way they
+might learn from observing other
+cheetahs they might learn from their
+their parents they might learn from all
+sorts of other signals but clearly
+they're not learning from rewards
+obtained only from eating the meat of
+the gazelle at the end of a successful
+hunt right so there's a lot that goes on
+into these reward signals uh and you
+could imagine extracting other more uh
+useful forms of supervision you could
+learn from demonstrations either by
+directly copying The observed Behavior
+or even inferring rewards from sort of
+behavior by something called inverse
+reinforcement learning you can learn
+from observing the world learn to
+predict what will happen next even if
+you're not sure what you're supposed to
+be doing and then leverage that
+knowledge later once you're more aware
+of what your task is you can employ
+unsupervised learning on supervised
+feature extraction things like that you
+can also transfer Knowledge from other
+tasks you can even use metal learning
+where you learn to adapt more quickly
+from your past experience of solving
+other tasks and these are all things
+that we could try to leverage and these
+are all things that we'll actually learn
+about in this course
+here's an example of imitation learning
+this is actually a fairly old example at
+this point from about 80 years ago from
+some work from Nvidia showing a purely
+imitation based method of poor
+autonomous driving
+now this method tries to directly copy
+the actions with the observed human
+driver but of course you could do a lot
+better you could for example in further
+intent and we know this is something
+that humans do this is a psychology
+study uh here the test subject is the
+child on the right hand side now you can
+see the child here is not going to try
+to imitate what the experimenter is
+doing because clearly the experimenter
+is not doing something very smart what
+the child will do instead is in further
+intent and then taking a very different
+sequence of actions that is better for
+fulfilling their intent rather than
+simply copying them this is really the
+Hallmark of human imitation when we say
+that a person imitates somebody else
+they're not literally observing
+someone's muscle activations and
+Performing the same muscle activations
+at some level they're always inferring
+something about what that other creature
+or person is attempting to do and then
+doing it in their own way it might be
+very literal where they still carry out
+the same motions but figure out the
+commands to their muscles that will
+create those motions or might be even
+more abstract like it is here where they
+carry out entirely different actions but
+that lead to the seemingly desired okay
+inverse enforce learning algorithms can
+be actually used with robots this is
+again work that's at this point pretty
+old it's about eight years old that
+shows an inverse reinforcement algorithm
+or this robot infers the intent of the
+human demonstrator showing this poor
+emotion figures out that the point is to
+really seek out that yellow cup and to
+pour the content of the orange cup into
+the yellow cup and once it inferred that
+intent then it could perform the task in
+a variety of settings
+foreign
+is a really big part of control
+prediction is separate from how we
+typically think of model free
+reinforcement learning but there's ample
+evidence in neuroscience and psychology
+the prediction is very important part of
+how humans and animals learn about their
+world we could imagine predictive models
+in a very literal sense where you could
+actually predict your future sensory
+readings and you can Implement real
+world predictive models so here a robot
+plays around with objects in its
+environment collects some data and then
+learns to predict what it will see in
+response to different actions so the
+different columns here show predicted
+future images in response to different
+motor commands this is quite a while
+back this is seven years ago so you can
+see that the predictions here are not a
+very high quality but they capture the
+gist of what the robot is trying to do
+and they can be used to control objects
+so you can tell it move this particular
+object marked in red to the green
+location it'll imagine the movement and
+then it will actually actuate the arm to
+move the object in that way so
+predictive models can allow you to solve
+new tasks
+you can use this as a very powerful tool
+for emergent Behavior you could for
+example command the robot to move some
+objects and might figure out that it
+needs to pick up a tool to move those
+two objects together
+uh here's another two use example here
+it figures out that L-shaped tool can
+slide the the blue object and here
+there's an emergent tool use scenario
+where it figures out to move these two
+pieces of trash the uh water bottle
+makes for a nice uh improvised tool
+and predictive models have really come a
+long way so in recent years they've
+gotten a lot better with modern advances
+in general modeling it is a diffusion
+based video prediction model that is
+being used to synthesize clips of
+driving videos the first three frames
+here are real the remaining frames are
+actually synthesized and you can see
+that the model will actually produce a
+realistic camera movement it will
+introduce new objects as the car turns
+it will um
+even um predict the motion of the other
+cars with some Reasonable Doubt in these
+in these examples by the way the left
+video inch pair is the real one the
+right one is the synthetical
+and here are the same uh model is being
+run on robotic videos similar to the
+ones that I showed before just so you
+can see the contrast from 2017 to 2022
+you can see that now the arm is clear
+and crisp the objects move in realistic
+ways and so forth
+there's also a lot of interesting
+progress especially in the past year on
+leveraging advances in pre-trained
+models so when we do reinforcement
+learning we typically don't have to do
+it from scratch what we could do is we
+could use a model pre-train on large
+amounts of internet data and then use it
+for control this is actually an
+imitation learning example it doesn't do
+well it actually does direct indication
+but it is doing a learning based control
+this is the rt2 model which uses a first
+a language model that is a pre-trained
+on language then a visual language model
+that uses that language model to process
+internet images for things like question
+answering like what is happening in the
+images say it's a great donkey walking
+down the street so now the model
+understands pictures it understands text
+and then that model is further
+fine-tuned to upload robot actions so
+that when it's told what should the
+robot do to pick up the chips it'll
+output the numerical values for the
+actions that'll actually pick up the
+ships so now it can bring in knowledge
+that it learned from the internet to
+perform this task more effectively
+here are some examples of the kind of
+intelligence tasks that this model can
+pass so it can be told to move the
+banana to the bottle the robot data has
+examples of moving bananas but to
+understand what it means to move into
+the bottle that's leverage internet data
+here it's asked to solve a math problem
+by putting the banana on the answer of
+the math problem here it's told to put
+the strawberry into the correct Bowl to
+figure out what correct Bowl means it
+needs to recognize the fruits in each of
+the bowls and figure out that strawberry
+Bowl is in fact the correct one
+foreign
+here's some more examples pick up an
+object that is different from all the
+other objects now it knows how to pick
+up obvious in the robot data but it
+doesn't know what different from all the
+others means from that but that has to
+leverage internet data and it figures
+out that the bar is the different object
+because all the other objects are
+bottles
+you can understand instruction in other
+languages even though the robot data is
+only annotated in one language and so on
+okay so these are some examples of the
+kinds of problems that are that we might
+study in the context of learning based
+decision making besides the 4rl problems
+but to conclude this lecture I want to
+end on maybe a somewhat more grandiose
+point I want to come back to this
+question how do we build intelligent
+machines and really argue that the basic
+building blocks of deep RL might be very
+good building blocks for answering this
+question
+this will force a controversial
+statement I don't expect everybody to
+agree with me on this this is a big part
+of why I'm excited about this topic and
+I hope to convey some of that excitement
+to you
+so imagine they have to build an
+intelligent machine something that as
+intelligent as a person where would you
+start
+well in the olden days the way we would
+think about this is that maybe we need
+to understand the brain and the brain
+has a lot of parts so let's understand
+what those parts are figure out how each
+of them work and then write computer
+programs to emulate the behavior of each
+of those parts
+uh of course our modern understanding of
+the brain is more advanced than what it
+was in the 19th century but parts of the
+brain more closely reflect their actual
+function but this is still a very
+difficult problem because each of the
+parts is very complex and if you we have
+to do a bunch of programming to code up
+the behavior of each of the parts and do
+a bunch more coding to wire them
+together we might be at this for a very
+long time that might just be a very very
+difficult way to implement an
+intelligent machine it might actually
+take a lot more intelligence on our part
+than we actually have
+so if we hypothesized that learning
+might be the basis of intelligence that
+might actually offer us a much easier
+way to address this problem
+and here's an argument of why learning
+might be the basis of intelligence
+there are some things that we can all do
+like walking so it might be reasonably
+argued that maybe those things are sort
+of built into our brains somehow
+but there are also some things that we
+can only learn like driving a car
+clearly driving a car is not built into
+our brains because cars weren't around
+when our brains evolved
+and we can learn a huge variety of
+things including very difficult things
+so therefore our learning mechanisms are
+likely powerful enough to do everything
+that we associate with intelligence it
+may be that in practice we don't
+actually use our learning mechanisms for
+some things like walking
+but we might hypothesize that maybe
+they're powerful enough that if we
+didn't have those things built in we
+could figure it out anyway
+that may or may not be true but I think
+uh there's a pretty good reason to
+believe this might be true
+it might still be very convenient to
+hard code a few really important bits
+but let's not get distracted by that
+part
+we can further hypothesize that not only
+is learning the basis of intelligence
+but in fact maybe there's actually a
+single learning procedure that underlies
+all that we associate with intelligent
+Behavior now that's a more radical
+statement it basically says that the way
+that we learn how to see and the way
+that we learn how to talk and learn how
+to hear is at some level the same
+instead of having an algorithm for every
+module I think we have a single flexible
+algorithm that placed in the right
+context increments all of the modules
+everything that we need in the brain
+and there are some uh circumstantial
+evidence to indicate that this might in
+fact be the case for example
+um and this these are some slides
+borrowed from Android you can build an
+electrode array that you can put on your
+tongue attach that array to a camera and
+learn how to perceive visual process
+through your tongue you can take an
+animal a ferret you can disconnect the
+optic nerve from the visual cortex and
+plug it into the auditory cortex and
+after a while the ferret will regain
+some degree of visual Acuity which means
+that its auditory cortex can essentially
+learn to process visual settings
+so these things kind of indicate that
+perhaps there's a degree of generality
+or homogeneity to the brain at least for
+the neocortex such that it can adapt to
+whatever sensory input is provided which
+might indicate that there's one
+algorithm
+and if there is one algorithm what does
+this one algebra need to be able to do
+well it needs to interpret Rich sensory
+inputs and needs to choose complex
+actions and to do both of those things
+we need large high-capacity models
+because that's the only way we know how
+to deal with risk sensory inputs and we
+need reinforcement learning because
+that's the mathematical formulas we use
+to take actions
+so why deep reinforcement learning well
+the Deep part provides us with scalable
+learning from large complex data sets
+and the reinforced learning gives us the
+optimization the ability to take actions
+the combination of learning and search
+deep is great for learning reinforcement
+learning is the way that we do the
+search
+and in fact there is some evidence in
+Neuroscience for both these things
+there's evidence that
+uh the kinds of representations acquired
+by Deep neural networks have some
+statistical similarity to
+representations that are observed in the
+brain that doesn't mean that the brain
+works the same way that deep Nets do it
+just means that at some level when you
+process lots of data and extract
+suitable representations they end up
+looking similar which could have more to
+do with the fact that a large enough
+learning machine just pulls out those
+patterns in the data because that's what
+the data is made of we're going to say
+something about deep learning that's I
+think a much harder question to answer
+but the evidence suggests that some kind
+of representational similarity exists
+for visual percepts for auditory
+features and even for the sense of touch
+and the experiment's done done to
+ascertain the structure a little bit
+creative where the brain signals
+indicating the kind of features that in
+this case monkeys use for touch are
+obtained from recordings from Monkey
+neurons the Deep learning experiments
+done by actually taking a glove dusted
+with
+um
+white dust you getting a person to touch
+objects and then using a deep neural
+network to discover patterns in the the
+dust patterns on the on the glove so
+interesting experiments suggests that
+maybe the Cisco properties of features
+extracted by sufficiently powerful
+learning machines resemble the Futures
+in the brain
+and there's plenty of evidence in favor
+of reinforcement learnings at least one
+of the mechanisms underlying decision
+making in humans and animals in fact uh
+reinforcement actually emerged as a
+study of animal intelligence but we know
+now from evidence that percepts that
+anticipate reward become associated with
+similar firing patterns as the reward
+itself which is exactly what we would
+expect from a temporal difference
+learning process uh the basal ganglia
+appears to be a kind of reward system
+and that model 3rl like adaptation is
+often a good fit for experimental data
+of animal adaptation
+a lot always
+but the picture is not complete right so
+all of these uh kind of bits of
+circumstantial evidence might suggest
+that the tools of deep learning and
+reinforcement learning might be good
+tools for tackling the problem of
+intelligence
+but the problem is clearly not solved
+we have great methods that can learn
+from huge amounts of data by using deep
+learning we have great optimization
+methods for RL we don't yet have amazing
+methods that both use data RL has been
+made much more scalable in recent years
+it can tackle things like real world
+robotics problems but the kind of huge
+scale language model in general modeling
+applications still primarily use
+supervised learning so there's still
+some algorithmic building blocks that
+are necessary and furthermore humans
+learn incredibly quickly whereas deep RL
+methods typically require large amounts
+of data and humans reuse past knowledge
+whereas transfer learning URL is still
+an open problem it's not always clear
+what the reward function should be and
+it's not always clear what the role of
+prediction should be it seems like these
+methods can be very powerful but how do
+they fit in with model free methods are
+they just different things or can they
+be reconciled in some way so all these
+question marks I think give us uh ample
+space for additional research that we
+can do in this area and perhaps if the
+tools of deep learning and reinforcement
+learning are the right tools for
+building enormously powerful artificial
+intelligence systems that may be
+studying these questions can allow us to
+make some Headway on that problem
+and ultimately I think that we can get
+away from this picture thinking of uh
+intelligent systems as a collection of
+modules to implement and instead as a
+very elegant and simple framework where
+we have a general learning algorithm
+that can figure out whatever problems is
+posed to it in fact this idea is Not By
+Any Means new it's not something that
+was created in 21st century it's not
+even some of those created for deep
+learning or even in the age of machine
+learning
+here's a quote that I think very nicely
+exemplifies this perspective instead of
+trying to produce a program to simulate
+the adult mind why not rather try to
+produce one which simulates the child's
+If This Were then subjected to an
+appropriate course of Education one
+would obtain the adult brain who said
+this
+I'll try

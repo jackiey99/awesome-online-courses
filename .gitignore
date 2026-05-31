@@ -1,0 +1,19 @@
+# Slides PDFs are large; keep them out of git (re-downloadable from course pages)
+data/**/slides/*.pdf
+
+# OS / editor
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Python (for future pipeline scripts)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node / VitePress
+node_modules/
+.vitepress/cache/
+.vitepress/dist/
