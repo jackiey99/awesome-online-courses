@@ -8,7 +8,7 @@ export default defineConfig({
   cleanUrls: true,
   base: SITE_BASE,
 
-  srcExclude: ["README.md", "data/**/*.md", "pipeline/**/*.md"],
+  srcExclude: ["README.md", "data/**/*.md", "pipeline/**/*.md", "public/**/*.md"],
 
   markdown: {
     math: true,
@@ -65,6 +65,7 @@ export default defineConfig({
               { text: "Lecture 1 · 导论", link: "/courses/cs285/lecture-01" },
             ],
           },
+          { text: "❤️ 支持作者", link: "/donate" },
         ],
         sidebar: {
           "/courses/": [
@@ -103,6 +104,7 @@ export default defineConfig({
               { text: "Lecture 1 · Introduction", link: "/en/courses/cs285/lecture-01" },
             ],
           },
+          { text: "❤️ Support", link: "/en/donate" },
         ],
         sidebar: {
           "/en/courses/": [

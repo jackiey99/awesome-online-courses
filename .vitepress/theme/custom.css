@@ -161,3 +161,70 @@ html {
 .dark .vp-doc blockquote {
   background: var(--vp-c-bg-elv);
 }
+
+/* ============================================================
+   Donate page
+   ============================================================ */
+
+/* QR codes side-by-side, wrap on narrow screens. */
+.vp-doc .donate-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+.vp-doc .donate-grid figure {
+  flex: 0 1 280px;
+  margin: 0;
+  text-align: center;
+}
+.vp-doc .donate-grid figure img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  margin: 0 auto;
+  padding: 0.4rem;
+  background: white;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+}
+.vp-doc .donate-grid figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--vp-c-text-2);
+  font-weight: 500;
+}
+
+/* International payment buttons. */
+.vp-doc .donate-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 1.2rem 0 1.5rem;
+}
+.vp-doc .donate-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1.3rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none !important;
+  color: white !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+.vp-doc .donate-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  filter: brightness(1.05);
+}
+.vp-doc .donate-btn--bmc {
+  background: #ffdd00;
+  color: #0a0a0a !important;
+}
+.vp-doc .donate-btn--paypal {
+  background: #0070ba;
+}
